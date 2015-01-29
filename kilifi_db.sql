@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `activities` (
   `activity_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `destination_id` bigint(20) NOT NULL,
-  `destination_description` longtext NOT NULL,
+  `activity_description` longtext NOT NULL,
   `price` decimal(8,8) DEFAULT NULL,
   PRIMARY KEY (`activity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
