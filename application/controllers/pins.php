@@ -16,9 +16,8 @@ class Pins extends CI_Controller {
         $longitude=$this->input->post('longitude');
         $latitude=$this->input->post('latitude');
         $user_id=$this->input->post('user_id');
-
         $this->load->model('user_model');
-        $this->user_model->create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id);
+        $this->user_model->create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id,$hotel_name);
 
     }
 
@@ -30,7 +29,6 @@ class Pins extends CI_Controller {
         $room_type=$this->input->post('room_type');
         $number_of_people=$this->input->post('number_of_people');
         $price=$this->input->post('price');
-
         $this->load->model('user_model');
         $this->user_model->create_room($hotel_id,$room_type,$number_of_people,$price);
 
@@ -46,10 +44,8 @@ class Pins extends CI_Controller {
         $longitude=$this->input->post('longitude');
         $latitude=$this->input->post('latitude');
         $user_id=$this->input->post('user_id');
-
         $this->load->model('user_model');
         $this->user_model->create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id);
-
     }
 
 
@@ -58,8 +54,6 @@ class Pins extends CI_Controller {
         $destination_id=$this->input->post('destination_id');
         $activity_description=$this->input->post('activity_description');
         $price=$this->input->post('price');
-
-
         $this->load->model('user_model');
         $this->user_model->create_activity($destination_id,$activity_description,$price);
 
@@ -76,8 +70,6 @@ class Pins extends CI_Controller {
         $comment=$this->input->post('comment');
         $rating=$this->input->post('rating');
         $image=$this->input->post('image');
-
-
         $this->load->model('user_model');
         $this->user_model->create_rating($hotel_id,$destination_id,$rate_type,$user_id,$comment,$rating,$image);
 
@@ -95,8 +87,6 @@ class Pins extends CI_Controller {
         $amount_paid=$this->input->post('amount_paid');
         $date_to=$this->input->post('date_to');
         $date_from=$this->input->post('date_from');
-
-
         $this->load->model('user_model');
         $this->user_model->create_hotel_booking($hotel_id,$room_id,$amount_to_be_paid,$no_of_people,$amount_paid,$user_id,$date_from,$date_to);
 

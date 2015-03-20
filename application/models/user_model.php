@@ -62,14 +62,15 @@ class User_model extends CI_Model {
 
 
 
-    public function create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id)
+    public function create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id,$hotel_name)
     {
         $data=array(
              'hotel_type'=>$hotel_type,
              'hotel_description'=>$hotel_description,
              'longitude'=>$longitude,
              'latitude'=>$latitude,
-             'user_id'=>$user_id
+             'user_id'=>$user_id,
+            'hotel_name'=>$hotel_name
         );
         $this->db->insert('hotels',$data);
     }
