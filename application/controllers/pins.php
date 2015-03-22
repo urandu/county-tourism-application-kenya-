@@ -7,10 +7,71 @@ class Pins extends CI_Controller {
 
 
     }
+    //display pages with create forms.
+    public function new_hotel()
+    {
+        $this->load->view('new_hotel');
+    }
 
+    public function new_destination()
+    {
+        $this->load->view('new_destination');
+    }
+    /////////////////////////////
+
+
+
+
+    ///////////////////////////////all getters
+
+
+    public function destinations()
+    {
+        $this->load->model('user_model');
+        $destinations=$this->user_model->get_all_destinations();
+        $data['destinations']=$destinations;
+        $this->load->view('destinations',$data);
+    }
+
+    public function view_destination($destination_id)
+    {
+        $this->load->model('user_model');
+        $destination=$this->user_model->get_destination($destination_id);
+        $ratings=$this->user_model->get_destination_ratings($destination_id);
+        $data['ratings']=$ratings;
+        $data['destination']=$destination;
+        $this->load->view('view_destination',$data);
+    }
+
+
+
+
+
+    public function hotels()
+    {
+        $this->load->model('user_model');
+        $hotels=$this->user_model->get_all_hotels();
+        $data['hotels']=$hotels;
+        $this->load->view('hotels',$data);
+    }
+
+    public function view_hotel($hotel_id)
+    {
+        $this->load->model('user_model');
+        $hotel=$this->user_model->get_hotel($hotel_id);
+        $ratings=$this->user_model->get_hotel_ratings($hotel_id);
+        $data['ratings']=$ratings;
+        $data['hotel']=$hotel;
+        $this->load->view('view_hotel',$data);
+    }
+
+
+
+    ///////////////////////////////end of getters
 //all setters
     public function add_hotel()
     {
+        $hotel_name=$this->input->post('hotel_name');
         $hotel_type=$this->input->post('hotel_type');
         $hotel_description=$this->input->post('hotel_description');
         $longitude=$this->input->post('longitude');
@@ -38,6 +99,7 @@ class Pins extends CI_Controller {
 
     public function add_destination()
     {
+        $destination_name=$this->input->post('destination_name');
         $destination_type=$this->input->post('destination_type');
         $destination_description=$this->input->post('destination_description');
         $price=$this->input->post('price');
@@ -45,7 +107,7 @@ class Pins extends CI_Controller {
         $latitude=$this->input->post('latitude');
         $user_id=$this->input->post('user_id');
         $this->load->model('user_model');
-        $this->user_model->create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id);
+        $this->user_model->create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id,$destination_name);
     }
 
 

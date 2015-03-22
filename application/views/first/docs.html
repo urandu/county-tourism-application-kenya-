@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mobile first web app theme | first</title>
+    <meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="app-css.v1.css">
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <script src="js/html5.js"></script>
+    <script src="js/excanvas.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#nav">
+<!-- header -->
+<header id="header" class="navbar navbar-sm bg bg-black">
+    <ul class="nav navbar-nav navbar-avatar pull-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="hidden-sm-only">Mika Sokeil</span>
+                <span class="thumb-small avatar inline"><img src="images/avatar.jpg" alt="Mika Sokeil"
+                                                             class="img-circle"></span>
+                <b class="caret hidden-sm-only"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#"><span class="badge bg-danger pull-right">3</span>Notifications</a></li>
+                <li class="divider">
+                <li><a href="docs.html">Help</a></li>
+                <li><a href="signin.html">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a class="navbar-brand" href="default.html">first</a>
+    <button type="button" class="btn btn-link nav-toggle pull-left hidden-desktop" data-toggle="class:show"
+            data-target="#nav">
+        <i class="icon-reorder icon-xlarge text-default"></i>
+    </button>
+    <ul class="nav navbar-nav hidden-phone">
+        <li>
+            <div class="m-t m-b-small">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                        class="icon-comment-alt icon-xlarge text-default"></i><b
+                        class="badge badge-notes bg-danger">3</b></a>
+                <section class="dropdown-menu panel panel-large arrow-top m-l-small">
+                    <header class="panel-heading bg-white"><span class="h5"><strong>You have 3
+                        notifications</strong></span></header>
+                    <div class="list-group list-group-flush m-t-n">
+                        <a href="#" class="media list-group-item">
+                            <span class="pull-left thumb-small"><img src="images/avatar.jpg" alt="John said"
+                                                                     class="img-circle"></span>
+                <span class="media-body block m-b-none">
+                  Bootstrap 3.0 is comming<br><small class="text-muted">3 minutes ago</small>
+                </span>
+                        </a>
+                        <a href="#" class="media list-group-item">
+                            <span class="pull-left thumb-small"><i class="icon-share icon-2x text-default"></i></span>
+                <span class="media-body block m-b-none">
+                  Jone shared a file to you<br><small class="text-muted">2 minutes ago</small>
+                </span>
+                        </a>
+                        <a href="#" class="media list-group-item">
+                <span class="media-body block m-b-none">
+                  Admin upgrade the app to ver 2.0<br><small class="text-muted">1 minute ago</small>
+                </span>
+                        </a>
+                    </div>
+                    <footer class="panel-footer text-small"><a href="#" class="pull-right"><i class="icon-cog"></i></a>
+                        <a href="#">See all the notifications</a>
+                    </footer>
+                </section>
+            </div>
+        </li>
+        <li class="dropdown shift" data-toggle="shift:appendTo" data-target=".nav-primary .nav">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                    class="icon-cog icon-xlarge visible-phone visible-sm-inline"></i>Settings <b
+                    class="caret hidden-sm-only"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#" data-toggle="class:navbar-fixed" data-target="body">Navbar
+                        <span class="text-active">auto</span>
+                        <span class="text">fixed</span>
+                    </a>
+                </li>
+                <li class="visible-lg">
+                    <a href="#" data-toggle="class:nav-vertical" data-target="#nav">Nav
+                        <span class="text-active">vertical</span>
+                        <span class="text">horizontal</span>
+                    </a>
+                </li>
+                <li class="divider hidden-phone">
+                <li class="nav-header">Colors</li>
+                <li>
+                    <a href="#" data-toggle="class:bg bg-black" data-target=".navbar">Navbar
+                        <span class="text">white</span>
+                        <span class="text-active">inverse</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="class:bg-light" data-target="#nav">Nav
+                        <span class="text">inverse</span>
+                        <span class="text-active">light</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <form class="navbar-form pull-left shift" action="" data-toggle="shift:appendTo" data-target=".nav-primary">
+        <i class="icon-search text-muted"></i>
+        <input type="text" class="input-small" placeholder="Search">
+    </form>
+</header>
+<!-- / header --><!-- nav -->
+<nav id="nav" class="nav-primary nav-doc visible-desktop bg-light">
+    <ul class="nav m-t-small" data-spy="affix" data-offset-top="50">
+        <li class="nav-header">Documents</li>
+        <li class="active"><a href="#bootstrap">Bootstrap</a></li>
+        <li class="nav-header">CSS</li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#icons">Icons</a></li>
+        <li><a href="#btn-circle">Circle buttons</a></li>
+        <li><a href="#progress">Progress</a></li>
+        <li><a href="#list-group">List group</a></li>
+        <li><a href="#panel">Panel</a></li>
+        <li><a href="#grid">Grid</a></li>
+        <li class="nav-header">Components</li>
+        <li><a href="#toggle-class">Toggle class</a></li>
+        <li><a href="#shift">Shift</a></li>
+        <li><a href="#button-state">Button state</a></li>
+        <li><a href="#combodate">Combodate</a></li>
+        <li><a href="#file-input">File input</a></li>
+        <li><a href="#sparkline">Sparkline</a></li>
+        <li><a href="#easy-pie-chart">Easy pie chart</a></li>
+    </ul>
+</nav>
+<!-- / nav -->
+<section id="content">
+<main class="main">
+<div class="clearfix">
+<h2>Documents</h2>
+
+<p id="bootstrap">For the bootstrap css and components, please check the <strong><a
+        href="../twitter.github.com/bootstrap">Bootstrap</a></strong></p>
+
+<h3>CSS
+    <small>Extensible classes</small>
+</h3>
+<div class="line"></div>
+<h4 id="overview">Overview</h4>
+
+<p>first is a mobile first web app / admin dashboard theme with flat ui, it's lightweight but with many components suit
+    to your need. it's fully responsive, the widgets and components are mobile first.</p>
+<h4>Features:</h4>
+<ul>
+    <li>Lightweight</li>
+    <li>Flat ui with clean style</li>
+    <li>Many components</li>
+    <li>Mobile widgets</li>
+</ul>
+<h4>Credits:</h4>
+<ul>
+    <li><a href="../fortawesome.github.io/Font-Awesome/default.htm">FontAwesome</a></li>
+    <li><a href="../github.com/vitalets/combodate">Combodate</a></li>
+    <li><a href="../github.com/grevory/bootstrap-file-input">File input</a></li>
+    <li><a href="../omnipotent.net/jquery.sparkline/default.htm">Sparkline</a></li>
+    <li><a href="../github.com/rendro/easy-pie-chart/default.htm">Easy Pie Chart</a></li>
+</ul>
+<h4 id="icons" class="m-t-large">Icons</h4>
+
+<p>Use FontAwesome font icons, over 361 icons with version 3.2 and more will be added in the future, check <strong><a
+        href="../fortawesome.github.io/Font-Awesome/default.htm">FontAwesome</a></strong> for more details to see how to
+    use and examples</p>
+<h4 id="btn-circle" class="m-t-large">Circle buttons</h4>
+
+<p>Circle button extended the Bootstrap button class, but need put a icon in and add the <code>.btn-circle</code> class
+    on the button.</p>
+<h5><strong>Button options</strong></h5>
+
+<p class="doc-buttons">
+    <button href="#" class="btn btn-circle"><i class="icon-envelope-alt"></i>Normal</button>
+    <button href="#" class="btn btn-primary btn-circle"><i class="icon-lightbulb"></i>Primary</button>
+    <button href="#" class="btn btn-success btn-circle"><i class="icon-check"></i>Success</button>
+    <button href="#" class="btn btn-info btn-circle"><i class="icon-bar-chart"></i>Info</button>
+    <button href="#" class="btn btn-inverse btn-circle"><i class="icon-time"></i>Inverse</button>
+    <button href="#" class="btn btn-warning btn-circle"><i class="icon-calendar-empty"></i>Warning</button>
+    <button href="#" class="btn btn-danger btn-circle"><i class="icon-group"></i>Danger</button>
+    <button href="#" class="btn btn-white btn-circle"><i class="icon-plus"></i>White</button>
+</p>
+<p>Support <code>.btn-primary</code>, <code>.btn-success</code>, <code>.btn-info</code>, <code>.btn-inverse</code>,
+    <code>.btn-warning</code>, <code>.btn-danger</code>, <code>.btn-white</code></p>
+
+<p>Cross browser compatibility<br>
+    IE8 doesn't support rounded corners, the circle button become to a square button
+</p>
+<h5><strong>Button size</strong></h5>
+
+<p>Fancy larger or smaller buttons? Add <code>.btn-large</code> or <code>.btn-small</code> or <code>.btn-mini</code> for
+    additional sizes.</p>
+
+<p class="doc-buttons">
+    <button href="#" class="btn btn-large btn-circle"><i class="icon-envelope-alt"></i>Large</button>
+    <button href="#" class="btn btn-circle"><i class="icon-lightbulb"></i>Normal</button>
+    <button href="#" class="btn btn-small btn-circle"><i class="icon-check"></i>Small</button>
+    <button href="#" class="btn btn-mini btn-circle"><i class="icon-bar-chart"></i>Mini</button>
+</p>
+<h5><strong>Disabled state</strong></h5>
+
+<p>Add <code>.disabled</code>for disabled state.</p>
+
+<p class="doc-buttons">
+    <button href="#" class="btn btn-circle disabled"><i class="icon-envelope-alt"></i>Disabled</button>
+</p>
+<h4 id="progress" class="m-t-large">Progress</h4>
+
+<p>Added bar sizes on progress bar. Add <code>.progress-mini</code> or <code>.progress-small</code></p>
+
+<div class="progress progress-mini m-t-small" style="max-width:280px;">
+    <div class="bar bar-info" data-toggle="tooltip" data-original-title="40%" style="width: 40%"></div>
+</div>
+<div class="progress progress-small progress-striped  active" style="max-width:280px;">
+    <div class="bar bar-success" data-toggle="tooltip" data-original-title="30%" style="width: 30%"></div>
+</div>
+<div class="progress" style="max-width:280px;">
+    <div class="bar bar-danger" data-toggle="tooltip" data-original-title="20%" style="width: 20%"></div>
+</div>
+<h4 id="list-group" class="m-t-large">List group</h4>
+
+<p>List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones
+    with custom content.</p>
+<h5><strong>Basic list group</strong></h5>
+
+<p>Use <code>.list-group</code> for wrapper and <code>.list-group-item</code> for items.</p>
+<ul class="list-group" style="max-width:280px;">
+    <li class="list-group-item">Inbox</li>
+    <li class="list-group-item">Message</li>
+</ul>
+<pre><code class="html">&lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item"&gt;Inbox&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Message&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+<h5><strong>With badges and chevrons</strong></h5>
+<ul class="list-group" style="max-width:280px;">
+    <li class="list-group-item">
+        <i class="icon-chevron-right"></i>
+        <span class="badge">14</span>Inbox
+    </li>
+    <li class="list-group-item">
+        <i class="icon-chevron-right"></i>
+        <span class="badge bg-danger">3</span>Message
+    </li>
+</ul>
+<pre><code class="html">&lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item"&gt;
+    &lt;i class="icon-chevron-right"&gt;&lt;/i&gt;
+    &lt;span class="badge"&gt;14&lt;/span&gt;
+    Inbox
+    &lt;/li&gt;
+    &lt;li class="list-group-item"&gt;
+    &lt;i class="icon-chevron-right"&gt;&lt;/i&gt;
+    &lt;span class="badge bg-danger"&gt;3&lt;/span&gt;
+    Message
+    &lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+<h5><strong>Linked list group</strong></h5>
+
+<div class="list-group" style="max-width:280px;">
+    <a href="#" class="list-group-item">
+        <i class="icon-chevron-right"></i>
+        <span class="badge">14</span>Inbox
+    </a>
+    <a href="#" class="list-group-item"><i class="icon-chevron-right"></i>
+        <span class="badge bg-danger">3</span>Message
+    </a>
+</div>
+<pre><code class="html">&lt;div class="list-group"&gt;
+    &lt;a class="list-group-item"&gt;
+    &lt;i class="icon-chevron-right"&gt;&lt;/i&gt;
+    &lt;span class="badge"&gt;14&lt;/span&gt;
+    Inbox
+    &lt;/a&gt;
+    &lt;a class="list-group-item"&gt;
+    &lt;i class="icon-chevron-right"&gt;&lt;/i&gt;
+    &lt;span class="badge bg-danger"&gt;3&lt;/span&gt;
+    Message
+    &lt;/a&gt;
+    &lt;/div&gt;</code></pre>
+<h4 id="panel" class="m-t-large">Panel</h4>
+
+<p>Box panel that wrap your content</p>
+<h5><strong>Basic panel</strong></h5>
+
+<p>By default, all the <code>.panel</code> does is apply some basic border and padding to contain some content.</p>
+
+<div class="panel" style="max-width:280px;">
+    Basic panel example
+</div>
+<pre><code class="html">&lt;div class="panel"&gt;
+    Basic panel example
+    &lt;/div&gt;</code></pre>
+<h5><strong>Panel with heading and footer</strong></h5>
+
+<div class="panel" style="max-width:280px;">
+    <div class="panel-heading">Panel heading</div>
+    Panel content
+    <div class="panel-footer">Panel footer</div>
+</div>
+<pre><code class="html">&lt;div class="panel"&gt;
+    &lt;div class="panel-heading"&gt;Panel heading&lt;/div&gt;
+    Basic panel example
+    &lt;div class="panel-footer"&gt;Panel footer&lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<p>For more complex content in the panel heading and panel content, please check on the <a href="widgets.html"><strong>Widges</strong></a>
+    page.</p>
+<h4 id="grid" class="m-t-large">Grid</h4>
+
+<p>Added a two columns on Mobile, use <code>.row-2-phone</code>, view the effect by shrinking the page.</p>
+
+<div class="row-fluid row-2-phone">
+    <div class="span6">
+        <div class="panel">span6</div>
+    </div>
+    <div class="span6">
+        <div class="panel">span6</div>
+    </div>
+</div>
+<pre><code class="html">&lt;div class="row-fluid row-2-phone"&gt;
+    &lt;div class="span6"&gt;&lt;/div&gt;
+    &lt;div class="span6"&gt;&lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+
+<h3>Components
+    <small>Lightweight components to best practice on mobile</small>
+</h3>
+<div class="line"></div>
+<h4 id="toggle-class">Toggle class</h4>
+
+<p>It's easy to change a dom class by click on another dom element.</p>
+<h5><strong>Usage</strong></h5>
+
+<p>
+    Add <code>data-toggle="class:className"</code> and <code>data-target="#target"</code> to a link or button to toggle
+    a class.
+</p>
+<h5><strong>Example</strong></h5>
+<button class="btn btn-white m-b" data-toggle="class:bg-light" href="#nav">Toggle the nav background</button>
+<pre><code class="html">&lt;button class="btn btn-white" data-toggle="class:bg-light" data-target="#nav"&gt;
+    Toggle the nav background
+    &lt;/button&gt;</code></pre>
+
+<h4 id="shift" class="m-t-large">Shift</h4>
+
+<p>Shift js let you change the dom which have different position from mobile to desktop, it avoid to use duplicate
+    elements.</p>
+
+<div id="shift-target"><strong>Usage</strong></div>
+<p>
+    Add <code>data-toggle="shift:insertBefore"</code> and <code>data-target="#target"</code> to the dom that you want to
+    shift.
+</p>
+
+<div class="panel shift" data-toggle="shift:insertBefore" data-target="#shift-target">Put me before "Usage" on mobile
+</div>
+<pre><code class="html">&lt;div class="shift" data-toggle="shift:insertBefore" data-target="#shift-target"&gt;
+    Put me before "Usage" on mobile
+    &lt;/div&gt;</code></pre>
+<p>it also support <code>data-toggle="shift:appendTo"</code>, <code>data-toggle="shift:prependTo"</code>, <code>data-toggle="shift:insertAfter"</code>
+</p>
+
+<h4 id="button-state" class="m-t-large">Button state</h4>
+
+<p>Change the button state when click on it. add <code>.text</code> <code>.text-active</code></p>
+<h5><strong>Example</strong></h5>
+<button class="btn btn-white m-b" data-toggle="button">
+    <span class="text">More</span>
+    <span class="text-active">Less</span>
+</button>
+<pre><code class="html">&lt;button class="btn btn-white" data-toggle="button"&gt;
+    &lt;span class="text"&gt;More&lt;/span&gt;
+    &lt;span class="text-active"&gt;Less&lt;/span&gt;
+    &lt;/button&gt;</code></pre>
+<h5><strong>With icons</strong></h5>
+<button class="btn btn-white m-b" data-toggle="button">
+          <span class="text">
+            <i class="icon-thumbs-up text-success"></i> 25
+          </span>
+          <span class="text-active">
+            <i class="icon-thumbs-down text-danger"></i> 10
+          </span>
+</button>
+<pre><code class="html">&lt;button class="btn btn-white" data-toggle="button"&gt;
+    &lt;span class="text"&gt;
+    &lt;i class="icon-thumbs-up text-success"&gt;&lt;/i&gt; 25
+    &lt;/span&gt;
+    &lt;span class="text-active"&gt;
+    &lt;i class="icon-thumbs-down text-danger"&gt;&lt;/i&gt; 10
+    &lt;/span&gt;
+    &lt;/button&gt;</code></pre>
+
+<h4 id="combodate" class="m-t-large">Combodate</h4>
+
+<p>Use combodate for date picker, it's light and mobile friendly. check on <a
+        href="../github.com/vitalets/combodate"><strong>Combodate</strong></a> for more details.</p>
+<h5><strong>Useage</strong></h5>
+
+<p>Add <code>.combodate</code> class to the input and use <code>data-format="DD-MM-YYYY HH:mm"</code> <code>data-template="D
+    MMM YYYY - HH : mm"</code> to format the display</p>
+<h5><strong>Example</strong></h5>
+<input type="text" class="combodate" data-format="DD-MM-YYYY HH:mm" data-template="D  MMM  YYYY  -  HH : mm"
+       name="datetime" value="21-12-2012 20:30">
+<pre><code class="html">&lt;input type="text" class="combodate" data-format="DD-MM-YYYY HH:mm" data-template="D MMM YYYY
+    - HH : mm" name="datetime" value="21-12-2012 20:30"&gt;</code></pre>
+
+<h4 id="file-input" class="m-t-large">File input</h4>
+
+<p>Check the file input plugin on <a href="../github.com/grevory/bootstrap-file-input"><strong>File input</strong></a>
+    for more details.</p>
+<input type="file" title="Browse" class="btn btn-small btn-info"><h4 id="sparkline" class="m-t-large">Sparkline</h4>
+
+<p>Check more details on <a href="../omnipotent.net/jquery.sparkline/default.htm"><strong>Sparkline</strong></a>.</p>
+<h5><strong>Useage</strong></h5>
+
+<p>add <code>.sparkline</code> to trigger the sparkline.</p>
+<h5><strong>Basic bar</strong></h5>
+
+<div class="sparkline m-b" data-type="bar" data-bar-width="5">
+    <!--10,20,30,20,30,40,30,20,30,40,32,32,10,20 -->
+</div>
+<pre><code class="html">&lt;div class="sparkline" data-type="bar" data-bar-width="5"&gt;
+    &lt;!--10,20,30,20,30,40,30,20,30,40,32,32,10,20--&gt;
+    &lt;/div&gt;</code></pre>
+<h5><strong>Basic line</strong></h5>
+
+<div class="sparkline m-b" data-type="line" data-bar-width="5" data-line-width="2" data-width="100"
+     data-line-color="#bfea5f" data-fill-color="#e4f3c3" data-highlight-line-color="#e1e5e9" data-spot-radius="5">
+    <!--10,20,30,20,30,40,30,20,30,40,32,32,10,20-->
+</div>
+<pre><code class="html">&lt;div class="sparkline" data-type="line" data-bar-width="5" data-line-width="2"
+    data-width="100" data-line-color="#bfea5f" data-fill-color="#e4f3c3" data-highlight-line-color="#e1e5e9"
+    data-spot-radius="5"&gt;
+    &lt;!--10,20,30,20,30,40,30,20,30,40,32,32,10,20--&gt;
+    &lt;/div&gt;</code></pre>
+<h5><strong>Composite with x-axis</strong></h5>
+
+<div class="m-b">
+    <div class="sparkline" data-type="line" data-resize="true" data-height="150" data-width="100%"
+         data-line-color="#bfea5f" data-fill-color="#f3fce3" data-highlight-line-color="#e1e5e9" data-spot-radius="5"
+         data-data="[120,250,200,325,400,380,250,320,345,250,250,250,200,325,300,365,250,210,200,180,150,160,250,250,250,200,300,310,330,250,320,205]"
+         data-composite-data="[160,230,250,300,320,330,280,260,250,280,250,260,250,255,330,345,300,210,200,200,170,180,250,250,200,200,280,270,310,250,280,175]"
+         data-composite-line-color="#a3e2fe" data-composite-fill-color="#e3f6ff"></div>
+    <ul class="list-inline text-muted axis">
+        <li>12:00<br>am</li>
+        <li>2:00</li>
+        <li>4:00</li>
+        <li>6:00</li>
+        <li>8:00</li>
+        <li>10:00</li>
+        <li>12:00<br>pm</li>
+        <li>2:00</li>
+        <li>4:00</li>
+        <li>6:00</li>
+        <li>8:00</li>
+        <li>10:00</li>
+    </ul>
+</div>
+<pre><code class="html">&lt;div class="sparkline" data-type="line" data-resize="true" data-height="150"
+    data-width="100%" data-line-color="#bfea5f" data-fill-color="#f3fce3" data-highlight-line-color="#e1e5e9"
+    data-spot-radius="5"
+    data-composite-data="[160,230,250,300,320,330,280,260,250,280,250,260,250,255,330,345,300,210,200,200,170,180,250,250,200,200,280,270,310,250,280,175]"
+    data-composite-line-color="#a3e2fe" data-composite-fill-color="#e3f6ff"
+    data-data="[120,250,200,325,400,380,250,320,345,250,250,250,200,325,300,365,250,210,200,180,150,160,250,250,250,200,300,310,330,250,320,205]"
+    &lt;/div&gt;
+    &lt;ul class="list-inline text-muted axis"&gt;
+    &lt;li&gt;12:00&lt;br&gt;am&lt;/li&gt;
+    &lt;li&gt;2:00&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+<h4 id="easy-pie-chart" class="m-t-large">Easy Pie Chart</h4>
+
+<p>Check more details on <a href="../github.com/rendro/easy-pie-chart/default.htm"><strong>Easy Pie Chart</strong></a>.
+    use excanvas.js for IE8 rendering. if your app do not need support IE8, you can remove it.</p>
+<h5><strong>Usage</strong></h5>
+
+<p>add <code>.easypiechart</code> class and use data attribute to config <code>data-percent="75"</code>, <code>data-size="120"</code>,
+    <code>data-bar-color="75"</code>, <code>data-line-width="5"</code>, <code>data-track-color="#eee"</code></p>
+<h5><strong>Example</strong></h5>
+
+<div class="easypiechart" data-percent="75" data-line-width="5" data-size="120" data-bar-color="#576879"
+     data-track-color="#eee">
+    <span class="h2">75</span>%
+    <div class="easypie-text text-muted">new visits</div>
+</div>
+<pre><code class="html">&lt;div class="easypiechart" data-size="120" data-percent="75" data-line-width="5"
+    data-track-color="#eee" data-bar-color="#576879"&gt;
+    &lt;span class="h2"&gt;75&lt;/span&gt;%
+    &lt;div class="easypie-text text-muted"&gt;
+    new visits
+    &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<h4 class="m-t-large">Cross browser compatibility</h4>
+
+<p>Use response.js to support IE8 media queries and html5.js to support html5 new tag names.</p>
+<pre><code class="html">&lt;!--[if lt IE 9]&gt;
+    &lt;script src="js/respond.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js/html5.js"&gt;&lt;/script&gt;
+    &lt;script src="js/excanvas.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;</code></pre>
+</div>
+</main>
+</section>
+<!-- footer -->
+<footer id="footer">
+    <div class="text-center padder clearfix">
+        <p>
+            <small>&copy; first 2013, Mobile first web app framework base on Bootstrap</small>
+            <br><br><a href="#" class="btn btn-mini btn-circle btn-twitter"><i class="icon-twitter"></i></a>
+            <a href="#" class="btn btn-mini btn-circle btn-facebook"><i class="icon-facebook"></i></a>
+            <a href="#" class="btn btn-mini btn-circle btn-gplus"><i class="icon-google-plus"></i></a>
+        </p>
+    </div>
+</footer>
+<!-- / footer --><!-- Bootstrap --><!-- app --><!-- Sparkline Chart --><!-- Easy Pie Chart --><!-- file input -->
+<!-- combodate -->
+<script src="app-js.v1.js"></script>
+</body>
+</html>
