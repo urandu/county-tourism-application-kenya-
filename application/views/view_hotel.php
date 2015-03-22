@@ -5,12 +5,12 @@
     <title>Tour destinations</title>
     <meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/font.css">
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/app.v2.css" type="text/css"/>
     <!--[if lt IE 9]>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/html5.js"></script>
-    <script src="js/ie/excanvas.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/respond.min.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/html5.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/excanvas.js"></script>
     <![endif]-->
 </head>
 <body class="navbar-fixed" >
@@ -21,7 +21,7 @@
             <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="hidden-xs-only">Martin Otieno</span>
                 <span class="thumb-small avatar inline">
-                    <img src="images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
+                    <img src="<?php echo(base_url()); ?>public/images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
                 </span>
                 <b class="caret hidden-xs-only"></b>
             </a>
@@ -100,25 +100,78 @@
 <section id="content">
     <section class="main">
 
-        <div class=" m-t">
-            <div id="gallery" class="gallery hide">
-                <div class="item"><img
-                            src="images/katoa.jpg">
+        <?php if(isset($hotel) )
+        {
 
-                    <div class="desc"><h4>Katoa Hotel</h4>
+            ?>
+            <div class=" m-t">
+                <div id="gallery" class="gallery hide">
+                    <div class="item"><img
+                            src="<?php echo(base_url()); ?>public/images/katoa.jpg">
+
+                        <div class="desc"><h4><?php  echo($hotel->hotel_name); ?></h4>
 
 
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare animal species and birds which include, the African bush elephants, buffalo, monkeys, Baboons, Water bucks etc are found. The nyari view point which gives the forest a birds eye view is the most spectacular event one shouldn’t miss while visiting the forest. It is situated about 14 kilometers from the forest’s Mida main entrance. For those who love going for picnic, the place offers a well protected picnic area that is situated closer to the view point. However no game drives can be done instead one can go on guided walking safaris, bird watching and cycling safaris.
 
-                            For those who love adventure, a tree house is well built near a water hole where animals always come to drink water.
+                            <!-- left tab -->
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    <ul class="nav nav-tabs ">
+                                        <li ><a href="components.html#messages-1" data-toggle="tab"><i
+                                                    class="fa fa-star fa-lg text-default"></i>ratings</a></li>
+                                        <li><a href="components.html#profile-1" data-toggle="tab"><i
+                                                    class="fa fa-book fa-lg text-default"></i>details</a></li>
+                                        <li><a href="components.html#settings-1" data-toggle="tab"><i
+                                                    class="fa fa-map-marker fa-lg text-default"></i> map</a></li>
+                                    </ul>
+                                </header>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane " id="messages-1">
 
-                            Note children below ten years are not recommended here.
 
-                        </p></div>
+                                            ratings
+
+                                            <?php print_r($hotel); ?>
+                                        </div>
+                                        <div class="tab-pane" id="profile-1">
+
+
+                                            <h4>Description</h4>
+
+                                            <p><?php  echo($hotel->hotel_description); ?></p>
+
+                                        </div>
+                                        <div class="tab-pane" id="settings-1">
+                                            <h4>Map</h4>
+
+
+
+                                            <div id="map3" style="height:362px"></div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- / left tab -->
+
+
+
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
-        </div>
+        <?php
+
+        } else
+        {
+            echo("No Destination found");
+        }
+        ?>
     </section>
 </section>
 <footer id="footer">
@@ -130,9 +183,32 @@
 </footer>
 <a href="index.html#" class="hide slide-nav-block" data-toggle="class:slide-nav slide-nav-left" data-target="body"></a>
 <!-- / footer --> <!-- Bootstrap --> <!-- app --> <!-- Sparkline Chart --> <!-- Easy Pie Chart -->
-<script src="js/app.v2.js"></script>
-<script src="js/prettyphoto/jquery.prettyPhoto_2.js"></script>
-<script src="js/grid/jquery.grid-a-licious.min_2.js"></script>
-<script src="js/grid/gallery_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/app.v2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/prettyphoto/jquery.prettyPhoto_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/grid/jquery.grid-a-licious.min_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/grid/gallery_2.js"></script>
+<script src="http://maps.google.com/maps/api/js"></script>
+<script src="<?php echo(base_url()); ?>public/js/maps/gmaps_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/maps/demo_2.js"></script>
+<script >
+
+
+
+    var latlng = new google.maps.LatLng(<?php  echo($hotel->latitude); ?>, <?php  echo($hotel->longitude); ?>);
+    var map = new google.maps.Map(document.getElementById('map3'), {
+        center: latlng,
+        zoom: 9,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: '<?php  echo($hotel->hotel_name); ?>'
+        /*draggable: true*/
+    });
+
+
+
+</script>
 </body>
 </html>

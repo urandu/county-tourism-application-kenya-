@@ -18,61 +18,16 @@
 <header id="header" class="navbar">
     <ul class="nav navbar-nav navbar-avatar pull-right">
         <li class="dropdown">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="hidden-xs-only">Martin Otieno</span>
-                <span class="thumb-small avatar inline">
-                    <img src="<?php echo(base_url()); ?>public/images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
-                </span>
-                <b class="caret hidden-xs-only"></b>
-            </a>
-            <ul class="dropdown-menu pull-right">
-                <li><a href="index.html#">Settings</a></li>
-                <li><a href="index.html#">Profile</a></li>
-                <li><a href="index.html#"><span class="badge bg-danger pull-right">3</span>Notifications</a></li>
-                <li class="divider"></li>
-                <li><a href="docs.html">Help</a></li>
-                <li><a href="signin.html">Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-    <a class="navbar-brand" href="index.html#">Tour destinations</a>
-    <button type="button" class="btn btn-link pull-left nav-toggle visible-xs"
-            data-toggle="class:slide-nav slide-nav-left" data-target="body">
-        <i class="fa fa-bars fa-lg text-default"></i>
-    </button>
-    <ul class="nav navbar-nav hidden-xs">
-        <li>
-            <div class="m-t m-b-small" id="panel-notifications">
-                <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-comment-o fa-fw fa-lg text-default"></i>
-                    <b class="badge badge-notes bg-danger count-n">2</b>
-                </a>
-                <section class="dropdown-menu m-l-small m-t-mini">
-                    <section class="panel panel-large arrow arrow-top">
-                        <header class="panel-heading bg-white"><span class="h5"><strong>You have <span
-                                        class="count-n">2</span> notifications</strong></span></header>
-                        <div class="list-group"><a href="index.html#" class="media list-group-item"> <span
-                                    class="pull-left thumb-small"><img src="images/kilifi1.jpg" alt="John said"
-                                                                       class="img-circle"></span> <span
-                                    class="media-body block m-b-none"> Moved to Bootstrap 3.0<br> <small
-                                        class="text-muted">23 June 13
-                                    </small> </span> </a> <a href="index.html#" class="media list-group-item"> <span
-                                    class="media-body block m-b-none"> first v.1 (Bootstrap 2.3 based) released<br> <small
-                                        class="text-muted">19 June 13
-                                    </small> </span> </a></div>
-                        <footer class="panel-footer text-small"><a href="index.html#" class="pull-right"><i
-                                    class="fa fa-cog"></i></a> <a href="index.html#">See all the notifications</a>
-                        </footer>
-                    </section>
-                </section>
-            </div>
-        </li>
-        <li>
-            <div class="m-t-small"><a class="btn btn-sm btn-info" data-toggle="modal" href="index.html#modal"><i
-                        class="fa fa-fw fa-plus"></i> POST</a></div>
-        </li>
 
+
+                <span class="thumb-small avatar inline">
+                    <img src="<?php echo(base_url()); ?>public/images/avatar.jpg" alt="image" class="img-circle">
+                </span>
+        </li>
     </ul>
+    <a class="navbar-brand" href="#"><?echo($page_title);?></a>
+
+
     <!--<form class="navbar-form pull-left shift" action="index.html" data-toggle="shift:appendTo"
           data-target=".nav-primary"><i class="fa fa-search text-muted"></i> <input type="text"
                                                                                     class="input-sm form-control"
@@ -85,8 +40,8 @@
 
 
 
-        <li><a href="destinations.php"><i class="fa fa-globe fa-lg"></i><span>Destinations</span></a></li>
-        <li><a href="hotels.php"><i class="fa fa-credit-card fa-lg"></i><span>Hotels</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>destinations"><i class="fa fa-globe fa-lg"></i><span>Destinations</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>hotels"><i class="fa fa-credit-card fa-lg"></i><span>Hotels</span></a></li>
         <li><a href="plan_trip.php"><i class="fa fa-calendar-o fa-lg"></i><span>Plan Trip</span></a></li>
         <li><a href="trips.php"><i class="fa fa-calendar fa-lg"></i><span>Planned Trips</span></a></li>
         <li><a href="bookings.php"><i class="fa fa-suitcase fa-lg"></i><span>Hotel Bookings</span></a></li>
@@ -99,13 +54,16 @@
 <!-- / nav -->
 <section id="content">
     <section class="main">
+<?php if(isset($destination) )
+        {
 
-        <div class=" m-t">
+            ?>
+            <div class=" m-t">
             <div id="gallery" class="gallery hide">
                 <div class="item"><img
                             src="<?php echo(base_url()); ?>public/images/arabuko.jpg">
 
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
+                    <div class="desc"><h4><?php  echo($destination->destination_name); ?></h4>
 
 
 
@@ -126,26 +84,27 @@
                                     <div class="tab-pane " id="messages-1">
 
 
-                                        ratings
+            ratings
 
+                                        <?php print_r($destination); ?>
                                     </div>
                                     <div class="tab-pane" id="profile-1">
 
 
                                         <h4>Description</h4>
 
-                                        <p>The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare animal species and birds which include, the African bush elephants, buffalo, monkeys, Baboons, Water bucks etc are found. The nyari view point which gives the forest a birds eye view is the most spectacular event one shouldn’t miss while visiting the forest. It is situated about 14 kilometers from the forest’s Mida main entrance. For those who love going for picnic, the place offers a well protected picnic area that is situated closer to the view point. However no game drives can be done instead one can go on guided walking safaris, bird watching and cycling safaris.
-
-                                            For those who love adventure, a tree house is well built near a water hole where animals always come to drink water.
-
-                                            Note children below ten years are not recommended here.</p>
+                                        <p><?php  echo($destination->destination_description); ?></p>
 
                                     </div>
                                     <div class="tab-pane" id="settings-1">
                                         <h4>Map</h4>
 
 
-                                        <div id="map3" style="height:362px"></div>
+
+                                                <div id="map3" style="height:362px"></div>
+
+
+
 
                                     </div>
                                 </div>
@@ -160,6 +119,14 @@
 
             </div>
         </div>
+            <?php
+
+        } else
+        {
+            echo("No Destination found");
+        }
+?>
+
     </section>
 </section>
 <footer id="footer">
@@ -182,23 +149,20 @@
 
 
 
-    var latlng = new google.maps.LatLng(-3.5078238, 39.9078863);
+    var latlng = new google.maps.LatLng(<?php  echo($destination->latitude); ?>, <?php  echo($destination->longitude); ?>);
     var map = new google.maps.Map(document.getElementById('map3'), {
         center: latlng,
-        zoom: 11,
+        zoom: 9,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     var marker = new google.maps.Marker({
         position: latlng,
         map: map,
-        title: 'location on map'
+        title: '<?php  echo($destination->destination_name); ?>'
         /*draggable: true*/
     });
 
-    google.maps.event.addListener(marker, 'dragend', function (event) {
-        document.getElementById("lat").value = this.getPosition().lat();
-        document.getElementById("long").value = this.getPosition().lng();
-    });
+
 
 </script>
 </body>

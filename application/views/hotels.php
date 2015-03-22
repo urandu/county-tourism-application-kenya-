@@ -94,7 +94,7 @@
         <li><a href="map.php"><i class="fa fa-map-marker fa-lg"></i><span>Map</span></a></li>
         <li><a href="payments.php"><i class="fa fa-money fa-lg"></i><span>My Payments</span></a></li>
         <li><a href="settings.php"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>
-        <li><a href="settings.php"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>
+
 
     </ul>
 </nav>
@@ -102,32 +102,60 @@
 <section id="content">
     <section class="main">
 
-        <div class=" m-t">
-            <div id="gallery" class="gallery hide">
-                <div class="item"><a href="view-hotel.php"  class="item-media"><img
-                            src="<?php echo(base_url()); ?>public/images/katoa.jpg"></a>
 
-                    <div class="desc"><h4>Katoa Hotel</h4>
 
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
+        <?php if(isset($hotels) && $hotels>0)
+        {
+            ?>
+
+            <div class=" m-t">
+                <div id="gallery" class="gallery hide">
+                    <?php
+
+                    foreach($hotels as $hotel)
+                    {
+                    ?>
+                    <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media"><div class="item"><img
+                                src="<?php echo(base_url()); ?>public/images/katoa.jpg">
+
+                            <div class="desc"><h4><?php echo($hotel->hotel_name); ?></h4>
+
+
+
+                                <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
+                                    {
+                                        echo(substr($hotel->hotel_description,0,100));
+                                    }else
+                                    {
+                                        echo($hotel->hotel_description);
+                                    }
+                                    ?></p></div>
+                    </a>
                 </div>
-                <div class="item"><a href="view-hotel.php"  class="item-media"><img
-                            src="<?php echo(base_url()); ?>public/images/katoa.jpg"></a>
 
-                    <div class="desc"><h4>Katoa Hotel</h4>
 
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
-                <div class="item"><a href="view-hotel.php"  class="item-media"><img
-                            src="<?php echo(base_url()); ?>public/images/katoa.jpg"></a>
+                <?php
+                }
 
-                    <div class="desc"><h4>Katoa Hotel</h4>
-
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
+                ?>
 
             </div>
-        </div>
+            </div>
+
+        <?php
+        }
+        else
+        {
+
+            echo('<h1>No hotel added</h1>');
+        }
+
+        ?>
+
+
+
+
+
     </section>
 </section>
 

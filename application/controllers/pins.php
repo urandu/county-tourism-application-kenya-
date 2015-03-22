@@ -39,7 +39,7 @@ class Pins extends CI_Controller {
         $destination=$this->user_model->get_destination($destination_id);
         $ratings=$this->user_model->get_destination_ratings($destination_id);
         $data['ratings']=$ratings;
-        $data['destination']=$destination;
+        $data['destination']=$destination[0];
         $this->load->view('view_destination',$data);
     }
 
@@ -61,7 +61,7 @@ class Pins extends CI_Controller {
         $hotel=$this->user_model->get_hotel($hotel_id);
         $ratings=$this->user_model->get_hotel_ratings($hotel_id);
         $data['ratings']=$ratings;
-        $data['hotel']=$hotel;
+        $data['hotel']=$hotel[0];
         $this->load->view('view_hotel',$data);
     }
 
