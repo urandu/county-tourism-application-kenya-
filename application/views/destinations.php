@@ -5,12 +5,13 @@
     <title>Tour destinations</title>
     <meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/font.css">
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/app.v2.css" type="text/css"/>
     <!--[if lt IE 9]>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/html5.js"></script>
-    <script src="js/ie/excanvas.js"></script>
+
+    <script src="http//localhost/kilifi/public/js/ie/respond.min.js"></script>
+    <script src="http//localhost/kilifi/public/js/ie/html5.js"></script>
+    <script src="http//localhost/kilifi/public/ie/excanvas.js"></script>
     <![endif]-->
 </head>
 <body class="navbar-fixed" >
@@ -21,7 +22,7 @@
             <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="hidden-xs-only">Martin Otieno</span>
                 <span class="thumb-small avatar inline">
-                    <img src="images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
+                    <img src="<?php echo(base_url()); ?>public/images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
                 </span>
                 <b class="caret hidden-xs-only"></b>
             </a>
@@ -52,7 +53,7 @@
                         <header class="panel-heading bg-white"><span class="h5"><strong>You have <span
                                         class="count-n">2</span> notifications</strong></span></header>
                         <div class="list-group"><a href="index.html#" class="media list-group-item"> <span
-                                    class="pull-left thumb-small"><img src="images/kilifi1.jpg" alt="John said"
+                                    class="pull-left thumb-small"><img src="<?php echo(base_url()); ?>public/images/kilifi1.jpg" alt="John said"
                                                                        class="img-circle"></span> <span
                                     class="media-body block m-b-none"> Moved to Bootstrap 3.0<br> <small
                                         class="text-muted">23 June 13
@@ -100,54 +101,57 @@
 <section id="content">
     <section class="main">
 
+
+
+
+                <?php if(isset($destinations) && $destinations>0)
+                {
+                    ?>
+
         <div class=" m-t">
             <div id="gallery" class="gallery hide">
-                <div class="item"><a href="view-destination.php"  class="item-media"><img
-                            src="images/arabuko.jpg"></a>
+                    <?php
 
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
+                    foreach($destinations as $destination)
+                    {
+                        ?>
+                <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media"><div class="item"><img
+                                    src="<?php echo(base_url()); ?>public/images/arabuko.jpg">
+
+                            <div class="desc"><h4><?php echo($destination->destination_name); ?></h4>
 
 
 
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
-                <div class="item"><a href="view-destination.php"  class="item-media"><img
-                            src="images/arabuko.jpg"></a>
+                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                    {
+                                        echo(substr($destination->destination_description,0,100));
+                                    }else
+                                    {
+                                        echo($destination->destination_description);
+                                    }
+                                    ?></p></div></a>
+                        </div>
 
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
 
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
-                <div class="item"><a href="view-destination.php"  class="item-media"><img
-                            src="images/arabuko.jpg"></a>
+                    <?php
+                    }
 
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
+                    ?>
 
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
-                <div class="item"><a href="view-destination.php"  class="item-media"><img
-                            src="images/arabuko.jpg"></a>
-
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
-
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
-                <div class="item"><a href="view-destination.php"  class="item-media"><img
-                            src="images/arabuko.jpg"></a>
-
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
-
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
-                <div class="item"><a href="view-destination.php"  class="item-media"><img
-                            src="images/arabuko.jpg"></a>
-
-                    <div class="desc"><h4>Arabuko Sokoke Forest</h4>
-
-                        <p class="text-muted">The biggest forest reserve in eastern Africa measuring about 400 squire kilometers. Some very rare ...</p></div>
-                </div>
             </div>
         </div>
+
+                <?php
+                }
+                else
+                {
+
+                    echo('<h1>No destination added</h1>');
+                }
+
+                ?>
+
+
     </section>
 </section>
 <footer id="footer">
@@ -159,9 +163,9 @@
 </footer>
 <a href="index.html#" class="hide slide-nav-block" data-toggle="class:slide-nav slide-nav-left" data-target="body"></a>
 <!-- / footer --> <!-- Bootstrap --> <!-- app --> <!-- Sparkline Chart --> <!-- Easy Pie Chart -->
-<script src="js/app.v2.js"></script>
-<script src="js/prettyphoto/jquery.prettyPhoto_2.js"></script>
-<script src="js/grid/jquery.grid-a-licious.min_2.js"></script>
-<script src="js/grid/gallery_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/app.v2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/prettyphoto/jquery.prettyPhoto_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/grid/jquery.grid-a-licious.min_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/grid/gallery_2.js"></script>
 </body>
 </html>

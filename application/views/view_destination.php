@@ -5,12 +5,12 @@
     <title>Tour destinations</title>
     <meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/font.css">
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/app.v2.css" type="text/css"/>
     <!--[if lt IE 9]>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/html5.js"></script>
-    <script src="js/ie/excanvas.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/respond.min.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/html5.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/excanvas.js"></script>
     <![endif]-->
 </head>
 <body class="navbar-fixed" >
@@ -21,7 +21,7 @@
             <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="hidden-xs-only">Martin Otieno</span>
                 <span class="thumb-small avatar inline">
-                    <img src="images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
+                    <img src="<?php echo(base_url()); ?>public/images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
                 </span>
                 <b class="caret hidden-xs-only"></b>
             </a>
@@ -103,7 +103,7 @@
         <div class=" m-t">
             <div id="gallery" class="gallery hide">
                 <div class="item"><img
-                            src="images/arabuko.jpg">
+                            src="<?php echo(base_url()); ?>public/images/arabuko.jpg">
 
                     <div class="desc"><h4>Arabuko Sokoke Forest</h4>
 
@@ -171,13 +171,13 @@
 </footer>
 <a href="index.html#" class="hide slide-nav-block" data-toggle="class:slide-nav slide-nav-left" data-target="body"></a>
 <!-- / footer --> <!-- Bootstrap --> <!-- app --> <!-- Sparkline Chart --> <!-- Easy Pie Chart -->
-<script src="js/app.v2.js"></script>
-<script src="js/prettyphoto/jquery.prettyPhoto_2.js"></script>
-<script src="js/grid/jquery.grid-a-licious.min_2.js"></script>
-<script src="js/grid/gallery_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/app.v2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/prettyphoto/jquery.prettyPhoto_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/grid/jquery.grid-a-licious.min_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/grid/gallery_2.js"></script>
 <script src="http://maps.google.com/maps/api/js"></script>
-<script src="js/maps/gmaps_2.js"></script>
-<script src="js/maps/demo_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/maps/gmaps_2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/maps/demo_2.js"></script>
 <script >
 
 
