@@ -203,6 +203,19 @@ class User_model extends CI_Model {
     }
 
 
+    public function validate($password,$email)
+    {
+        $this->db->where('password',$password);
+        $this->db->where('email',$email);
+        $result=$this->db->get('users');
+        if($result->num_rows()>0)
+        {
+            return $result->result();
+        }else
+        {
+            return false;
+        }
+    }
 
 
 

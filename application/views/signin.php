@@ -5,11 +5,11 @@
     <title>Mobile first web app theme | first</title>
     <meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/app.v2.css" type="text/css"/>
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/font.css">
+    <link rel="stylesheet" href="<?php echo(base_url()); ?>public/css/app.v2.css" type="text/css"/>
     <!--[if lt IE 9]>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/html5.js"></script> <![endif]--></head>
+    <script src="http://localhost/kilifi/public/js/ie/respond.min.js"></script>
+    <script src="http://localhost/kilifi/public/js/ie/html5.js"></script> <![endif]--></head>
 <body> <!-- header -->
 <header id="header" class="navbar bg bg-black"><a href="docs.html" class="btn btn-link pull-right m-t-mini"><i
         class="fa fa-question fa-lg text-default"></i></a> <a class="navbar-brand" href="signin.html#">first</a>
@@ -21,32 +21,32 @@
             <div class="col-lg-4 col-lg-offset-4 m-t-large">
                 <section class="panel">
                     <header class="panel-heading text-center"> Sign in</header>
-                    <form action="index.html" class="panel-body">
-                        <p><?php if(isset()) ?></p>
+                    <form action="<?php echo(base_url()); ?>/users/validate" method="post" class="panel-body">
+                        <p><?php if(isset($error_message)){
+
+                                echo "yeeeeeeeeeeeeeeeeeeeeee";} ?></p>
                         <div class="block"><label class="control-label">Email</label> <input type="email"
+                                                                                             name="email"
                                                                                              placeholder="test@example.com"
                                                                                              class="form-control"></div>
                         <div class="block"><label class="control-label">Password</label> <input type="password"
                                                                                                 id="inputPassword"
+                                                                                                name="password"
                                                                                                 placeholder="Password"
                                                                                                 class="form-control">
                         </div>
-                        <div class="checkbox"><label> <input type="checkbox"> Keep me logged in </label></div>
+                       <!-- <div class="checkbox"><label> <input type="checkbox"> Keep me logged in </label></div>
                         <a href="signin.html#" class="pull-right m-t-mini">
                             <small>Forgot password?</small>
-                        </a>
+                        </a>-->
                         <button type="submit" class="btn btn-info">Sign in</button>
-                        <div class="line line-dashed"></div>
-                        <a href="signin.html#" class="btn btn-facebook btn-block m-b-small"><i
-                                class="fa fa-facebook pull-left"></i>Sign in with Facebook</a> <a href="signin.html#"
-                                                                                                  class="btn btn-twitter btn-block"><i
-                            class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
+
 
                         <div class="line line-dashed"></div>
                         <p class="text-muted text-center">
                             <small>Do not have an account?</small>
                         </p>
-                        <a href="signup.html" class="btn btn-white btn-block">Create an account</a></form>
+                        <a href="<?php echo(base_url()); ?>/users/signup" class="btn btn-white btn-block">Create an account</a></form>
                 </section>
             </div>
         </div>
@@ -56,13 +56,11 @@
 <footer id="footer">
     <div class="text-center padder clearfix">
         <p>
-            <small>&copy; first 2013, Mobile first web app framework base on Bootstrap</small>
-            <br><br> <a href="signin.html#" class="btn btn-xs btn-circle btn-twitter"><i class="fa fa-twitter"></i></a>
-            <a href="signin.html#" class="btn btn-xs btn-circle btn-facebook"><i class="fa fa-facebook"></i></a> <a
-                href="signin.html#" class="btn btn-xs btn-circle btn-gplus"><i class="fa fa-google-plus"></i></a></p>
+            <small>&copy; Kilifi County</small>
+
     </div>
 </footer>
 <!-- / footer --> <!-- Bootstrap --> <!-- app -->
-<script src="js/app.v2.js"></script>
+<script src="<?php echo(base_url()); ?>public/js/app.v2.js"></script>
 </body>
 </html>

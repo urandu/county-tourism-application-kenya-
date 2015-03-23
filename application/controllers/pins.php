@@ -1,20 +1,66 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Pins extends CI_Controller {
-
+class Pins extends Im_Controller
+{
+    private $data;
+    protected $before_filter = array(
+        'action' => 'is_logged_in',
+        'except' => array()
+    );
 
     public function index() {
 
 
+        $data['page_title']='Kilifi County';
+        $this->load->view('home',$data);
 
     }
+
+    public function plan_trip()
+    {
+        $data['page_title']='Plan Trip';
+        $this->load->view('plan_trip',$data);
+    }
+    public function map()
+    {
+        $data['page_title']='Map';
+        $this->load->view('map',$data);
+    }
+    public function settings()
+    {
+        $data['page_title']='Settings';
+        $this->load->view('settings',$data);
+    }
+    public function trips()
+    {
+        $data['page_title']='Trips';
+        $this->load->view('trips',$data);
+    }
+
+    public function payments()
+    {
+
+        $data['page_title']='My Patients';
+        $this->load->view('payments',$data);
+    }
+    public function bookings()
+    {
+
+        $data['page_title']='My Bookings';
+        $this->load->view('bookings',$data);
+    }
+
+
+
     //display pages with create forms.
     public function new_hotel()
     {
-        $this->load->view('new_hotel');
+        $data['page_title']='New Hotel';
+        $this->load->view('new_hotel',$data);
     }
 
     public function new_destination()
     {
+        $data['page_title']='New Destination';
         $this->load->view('new_destination');
     }
     /////////////////////////////
@@ -30,6 +76,7 @@ class Pins extends CI_Controller {
         $this->load->model('user_model');
         $destinations=$this->user_model->get_all_destinations();
         $data['destinations']=$destinations;
+        $data['page_title']='Tour Destinations';
         $this->load->view('destinations',$data);
     }
 
@@ -40,6 +87,7 @@ class Pins extends CI_Controller {
         $ratings=$this->user_model->get_destination_ratings($destination_id);
         $data['ratings']=$ratings;
         $data['destination']=$destination[0];
+        $data['page_title']="Tour Destination";
         $this->load->view('view_destination',$data);
     }
 
@@ -52,6 +100,7 @@ class Pins extends CI_Controller {
         $this->load->model('user_model');
         $hotels=$this->user_model->get_all_hotels();
         $data['hotels']=$hotels;
+        $data['page_title']='Hotels';
         $this->load->view('hotels',$data);
     }
 
@@ -62,6 +111,7 @@ class Pins extends CI_Controller {
         $ratings=$this->user_model->get_hotel_ratings($hotel_id);
         $data['ratings']=$ratings;
         $data['hotel']=$hotel[0];
+        $data['page_title']='Accommodation';
         $this->load->view('view_hotel',$data);
     }
 
