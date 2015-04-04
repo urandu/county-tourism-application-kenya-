@@ -33,7 +33,53 @@
 
             ratings
 
-                                        <?php print_r($destination); ?>
+
+
+                                        <!-- .comment-list -->
+                                        <section class="comment-list block">
+                                            <article id="comment-id-1" class="comment-item media arrow arrow-left"><a
+                                                    class="pull-left thumb-small avatar"><img src="images/avatar.jpg" class="img-circle"></a>
+                                                <section class="media-body panel">
+                                                    <header class="panel-heading clearfix"><a href="widgets.html#">John smith</a> <span
+                                                            class="text-muted m-l-small pull-right"><i class="fa fa-clock-o"></i> 24 minutes ago</span>
+                                                    </header>
+                                                    <div class="panel-body">
+                                                        <div>Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
+                                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                                        </div>
+                                                        <div class="comment-action m-t-small"><a href="widgets.html#" data-toggle="class"
+                                                                                                 class="btn btn-white btn-xs active"> <i
+                                                                    class="fa fa-star-o text-muted text"></i><i
+                                                                    class="fa fa-star text-danger text-active"></i> Like </a> <a
+                                                                href="widgets.html#comment-form" class="btn btn-white btn-xs"><i
+                                                                    class="fa fa-mail-reply text-muted"></i> Reply</a></div>
+                                                    </div>
+                                                </section>
+                                            </article>
+
+
+                                            <!-- comment form -->
+                                            <article class="comment-item media" id="comment-form"><a class="pull-left thumb-small avatar"><img
+                                                        src="images/avatar.jpg" class="img-circle"></a>
+                                                <section class="media-body">
+                                                    <form action="widgets.html" class="m-b-none">
+                                                        <div class="input-group"><input type="text" placeholder="Input your comment here"
+                                                                                        class="form-control"> <span class="input-group-btn"> <button
+                                                                    class="btn btn-primary" type="button">POST
+                                                                </button> </span></div>
+                                                    </form>
+                                                </section>
+                                            </article>
+                                        </section>
+                                        <!-- / .comment-list -->
+
+
+
+
+
+
+
+                                        <?php // print_r($destination); ?>
                                     </div>
                                     <div class="tab-pane" id="profile-1">
 

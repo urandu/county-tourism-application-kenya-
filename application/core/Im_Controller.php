@@ -121,15 +121,11 @@ class Im_Controller extends CI_Controller {
 
    public function is_logged_in()
    {
-       $CI=get_instance();
-       $info=$CI->session->all_userdata('logged_in');
-       if($info)
-       {
-           ;
-       }else
-       {
-           redirect(base_url()."users/signin");
-       }
+
+      if(!logged_in())
+      {
+          redirect("users/signin");
+      }
    }
 }
 

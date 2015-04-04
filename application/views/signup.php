@@ -11,8 +11,8 @@
     <script src="http://localhost/kilifi/public/js/ie/respond.min.js"></script>
     <script src="http://localhost/kilifi/public/js/ie/html5.js"></script> <![endif]--></head>
 <body> <!-- header -->
-<header id="header" class="navbar bg bg-black"><a href="docs.html" class="btn btn-link pull-right m-t-mini"><i
-        class="fa fa-question fa-lg text-default"></i></a> <a class="navbar-brand" href="signup.html#">first</a>
+<header id="header" class="navbar bg bg-black"><a href="#" class="btn btn-link pull-right m-t-mini"><i
+        class="fa fa-question fa-lg text-default"></i></a> <a class="navbar-brand" href="#">Kilifi County</a>
 </header>
 <!-- / header -->
 <section id="content">

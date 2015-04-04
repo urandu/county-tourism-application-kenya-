@@ -11,8 +11,8 @@
     <script src="http://localhost/kilifi/public/js/ie/respond.min.js"></script>
     <script src="http://localhost/kilifi/public/js/ie/html5.js"></script> <![endif]--></head>
 <body> <!-- header -->
-<header id="header" class="navbar bg bg-black"><a href="docs.html" class="btn btn-link pull-right m-t-mini"><i
-        class="fa fa-question fa-lg text-default"></i></a> <a class="navbar-brand" href="signin.html#">first</a>
+<header id="header" class="navbar bg bg-black"><a href="#" class="btn btn-link pull-right m-t-mini"><i
+        class="fa fa-question fa-lg text-default"></i></a> <a class="navbar-brand" href="#">Kifi County</a>
 </header>
 <!-- / header -->
 <section id="content">
@@ -24,7 +24,7 @@
                     <form action="<?php echo(base_url()); ?>/users/validate" method="post" class="panel-body">
                         <p><?php if(isset($error_message)){
 
-                                echo "yeeeeeeeeeeeeeeeeeeeeee";} ?></p>
+                                echo "Error";} ?></p>
                         <div class="block"><label class="control-label">Email</label> <input type="email"
                                                                                              name="email"
                                                                                              placeholder="test@example.com"

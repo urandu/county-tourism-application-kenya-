@@ -154,13 +154,11 @@ class User_model extends CI_Model {
         $this->db->insert('pins',$data);
     }*/
 
-    public function create_rating($hotel_id,$destination_id,$rate_type,$user_id,$comment,$rating,$image='default.png'){
+    public function create_destination_rating($destination_id,$user_id,$comment='null',$rating,$image='default.png'){
 
 
         $data=array(
-            'hotel_id'=>$hotel_id,
             'destination_id'=>$destination_id,
-            'rate_type'=>$rate_type,
             'user_id'=>$user_id,
             'comment'=>$comment,
             'rating'=>$rating,
@@ -169,6 +167,21 @@ class User_model extends CI_Model {
         $this->db->insert('ratings',$data);
 
     }
+
+    public function create_hotel_rating($hotel_id,$user_id,$comment='null',$rating,$image='default.png'){
+
+
+        $data=array(
+            'hotel_id'=>$hotel_id,
+            'user_id'=>$user_id,
+            'comment'=>$comment,
+            'rating'=>$rating,
+            'image'=>$image
+        );
+        $this->db->insert('ratings',$data);
+
+    }
+
 
 
 
