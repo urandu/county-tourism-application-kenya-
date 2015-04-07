@@ -79,6 +79,7 @@ class User_model extends CI_Model {
     public function get_destination_ratings($destination_id)
     {
         $this->db->where('destination_id',$destination_id);
+        $this->db->order_by("destination_id", "asc");
         $result=$this->db->get('ratings');
         return $result->result();
     }
@@ -103,6 +104,7 @@ class User_model extends CI_Model {
     public function get_hotel_ratings($hotel_id)
     {
         $this->db->where('hotel_id',$hotel_id);
+        $this->db->order_by("hotel_id", "asc");
         $result=$this->db->get('ratings');
         return $result->result();
     }
@@ -154,7 +156,7 @@ class User_model extends CI_Model {
         $this->db->insert('pins',$data);
     }*/
 
-    public function create_destination_rating($destination_id,$user_id,$comment='null',$rating,$image='default.png'){
+    public function create_destination_rating($destination_id,$user_id,$rating,$comment='null',$image='default.png'){
 
 
         $data=array(
@@ -168,7 +170,7 @@ class User_model extends CI_Model {
 
     }
 
-    public function create_hotel_rating($hotel_id,$user_id,$comment='null',$rating,$image='default.png'){
+    public function create_hotel_rating($hotel_id,$user_id,$rating,$comment='null',$image='default.png'){
 
 
         $data=array(

@@ -10,7 +10,7 @@
                 <div class="item"><img
                             src="<?php echo(base_url()); ?>public/images/arabuko.jpg">
 
-                    <div class="desc"><h4><?php  echo($destination->destination_name); ?></h4>
+                    <div class="desc"><h4><?php  echo($destination->destination_name."    "); ?>&nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> )</h4>
 
 
 
@@ -31,35 +31,81 @@
                                     <div class="tab-pane " id="messages-1">
 
 
-            ratings
+                                        <article id="comment-id-1" class="comment-item media arrow arrow-left"><!--<a
+                                                    class="pull-left thumb-small avatar"><img src="<?php /*echo(base_url()); */?>public/images/avatar.jpg" class="img-circle"></a>-->
+                                            <section class="media-body panel">
+                                                <header class="panel-heading clearfix">New rating
+                                                </header>
+                                                <div class="panel-body">
+                                                    <div>
+                                                        <form method="post" action="<?php echo base_url(); ?>pins/add_destination_rating/<?php echo($destination->destination_id); ?>" >
+
+                                                            <div class="form-group"><label class="control-label">Rate</label>
+
+                                                                <div ><select data-required="true" id="rating" name="rating" class="form-control">
+                                                                        <option value="5">5</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="1">1</option>
+                                                                    </select></div>
+                                                            </div>
+
+                                                            <div class="form-group"><label class=" control-label">comment</label>
+
+                                                                <div ><input type="text" name="comment" placeholder="comment (not required)"
+                                                                                              class="form-control"></div>
+                                                            </div>
+                                                            <input type="submit" class="btn-small btn  " value="submit">
+
+                                                        </form>
+                                                    </div>
+
+                                            </section>
+                                        </article>
+
+
+
+                                        <?php
+
+                                        if(!empty($ratings) )
+                                        {
+
+
+                                            foreach($ratings as $rating)
+                                            {
+                                                ?>
+                                                <article id="comment-id-1" class="comment-item media arrow arrow-left"><!--<a
+                                                    class="pull-left thumb-small avatar"><img src="<?php /*echo(base_url()); */?>public/images/avatar.jpg" class="img-circle"></a>-->
+                                                    <section class="media-body panel">
+                                                        <header class="panel-heading clearfix"><?php echo(get_user_name($rating->user_id)); ?> <span
+                                                                class="text-muted m-l-small pull-right"><i class="fa fa-star"></i> Rating: <?php echo($rating->rating); ?>/5</span>
+                                                        </header>
+                                                        <div class="panel-body">
+                                                            <div><?php
+                                                                if(isset($rating->user_id))
+                                                                {echo($rating->comment);}  ?>
+                                                            </div>
+
+                                                    </section>
+                                                </article>
+                                            <?php
+                                            }
+
+                                        }else
+                                        {
+                                            echo("No ratings found");
+                                        }
+                                        ?>
 
 
 
                                         <!-- .comment-list -->
                                         <section class="comment-list block">
-                                            <article id="comment-id-1" class="comment-item media arrow arrow-left"><a
-                                                    class="pull-left thumb-small avatar"><img src="images/avatar.jpg" class="img-circle"></a>
-                                                <section class="media-body panel">
-                                                    <header class="panel-heading clearfix"><a href="widgets.html#">John smith</a> <span
-                                                            class="text-muted m-l-small pull-right"><i class="fa fa-clock-o"></i> 24 minutes ago</span>
-                                                    </header>
-                                                    <div class="panel-body">
-                                                        <div>Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh
-                                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                        </div>
-                                                        <div class="comment-action m-t-small"><a href="widgets.html#" data-toggle="class"
-                                                                                                 class="btn btn-white btn-xs active"> <i
-                                                                    class="fa fa-star-o text-muted text"></i><i
-                                                                    class="fa fa-star text-danger text-active"></i> Like </a> <a
-                                                                href="widgets.html#comment-form" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-mail-reply text-muted"></i> Reply</a></div>
-                                                    </div>
-                                                </section>
-                                            </article>
 
 
                                             <!-- comment form -->
-                                            <article class="comment-item media" id="comment-form"><a class="pull-left thumb-small avatar"><img
+                                            <!--<article class="comment-item media" id="comment-form"><a class="pull-left thumb-small avatar"><img
                                                         src="images/avatar.jpg" class="img-circle"></a>
                                                 <section class="media-body">
                                                     <form action="widgets.html" class="m-b-none">
@@ -69,7 +115,7 @@
                                                                 </button> </span></div>
                                                     </form>
                                                 </section>
-                                            </article>
+                                            </article>-->
                                         </section>
                                         <!-- / .comment-list -->
 

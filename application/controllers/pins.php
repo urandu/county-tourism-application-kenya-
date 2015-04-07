@@ -229,6 +229,28 @@ class Pins extends Im_Controller
         $this->user_model->create_activity_booking($activity_id,$amount_to_be_paid,$amount_paid,$user_id,$date_of_trip);
 
     }
+
+    public function add_destination_rating($destination_id)
+    {
+        $rating=$this->input->post('rating');
+        $comment=$this->input->post('comment');
+        $user_id=$this->session->userdata('user_id');
+        $this->load->model('user_model');
+        $this->user_model->create_destination_rating($destination_id,$user_id,$rating,$comment);
+        redirect(base_url()."pins/view_destination/".$destination_id);
+
+    }
+
+    public function add_hotel_rating($hotel_id)
+    {
+        $rating=$this->input->post('rating');
+        $comment=$this->input->post('comment');
+        $user_id=$this->session->userdata('user_id');
+        $this->load->model('user_model');
+        $this->user_model->create_hotel_rating($hotel_id,$user_id,$rating,$comment);
+        redirect(base_url()."pins/view_hotel/".$hotel_id);
+
+    }
 //end of all setters
 
 
