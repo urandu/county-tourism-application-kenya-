@@ -21,7 +21,7 @@
             <div class="col-lg-4 col-lg-offset-4 m-t-large">
                 <section class="panel">
                     <header class="panel-heading text-center"> Sign up</header>
-                    <form action="<?php echo(base_url()); ?>/users/create_user" method="post" class="panel-body">
+                    <form action="<?php echo(base_url()); ?>users/create_user" method="post" class="panel-body">
                         <div class="block"><label class="control-label">Names</label> <input name="names" type="text"
                                                                                                     placeholder="eg. John kamau"
                                                                                                     class="form-control">
@@ -61,7 +61,7 @@
                         <p class="text-muted text-center">
                             <small>Already have an account?</small>
                         </p>
-                        <a href="<?php echo(base_url()); ?>/users/signin" class="btn btn-white btn-block">Sign in</a></form>
+                        <a href="<?php echo(base_url()); ?>users/signin" class="btn btn-white btn-block">Sign in</a></form>
                 </section>
             </div>
         </div>
@@ -71,10 +71,8 @@
 <footer id="footer">
     <div class="text-center padder clearfix">
         <p>
-            <small>&copy; first 2013, Mobile first web app framework base on Bootstrap</small>
-            <br><br> <a href="signup.html#" class="btn btn-xs btn-circle btn-twitter"><i class="fa fa-twitter"></i></a>
-            <a href="signup.html#" class="btn btn-xs btn-circle btn-facebook"><i class="fa fa-facebook"></i></a> <a
-                href="signup.html#" class="btn btn-xs btn-circle btn-gplus"><i class="fa fa-google-plus"></i></a></p>
+            <small>&copy; Kilifi County</small>
+            <br><br> </p>
     </div>
 </footer>
 <!-- / footer --> <!-- Bootstrap --> <!-- app -->

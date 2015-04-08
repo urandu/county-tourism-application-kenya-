@@ -19,7 +19,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+        $data['page_title']='Admin Panel';
+		$this->load->view('admin_panel',$data);
 	}
 }
 

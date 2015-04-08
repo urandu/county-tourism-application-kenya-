@@ -21,7 +21,7 @@
             <div class="col-lg-4 col-lg-offset-4 m-t-large">
                 <section class="panel">
                     <header class="panel-heading text-center"> Sign in</header>
-                    <form action="<?php echo(base_url()); ?>users/validate" method="post" class="panel-body">
+                    <form action="<?php echo(base_url()); ?>users/validate_admin" method="post" class="panel-body">
                         <p><?php if(isset($error_message)){
 
                                 echo "Error";} ?></p>
