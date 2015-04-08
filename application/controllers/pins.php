@@ -17,6 +17,10 @@ class Pins extends Im_Controller
 
     public function plan_trip()
     {
+
+        $this->load->model('user_model');
+        $destinations=$this->user_model->get_all_destinations();
+        $data['destinations']=$destinations;
         $data['page_title']='Plan Trip';
         $this->load->view('plan_trip',$data);
     }

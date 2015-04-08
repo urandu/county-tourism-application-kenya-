@@ -20,9 +20,17 @@
                 <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media"><div class="item"><img
                                     src="<?php echo(base_url()); ?>public/images/arabuko.jpg">
 
-                            <div class="desc"><h4><?php echo($destination->destination_name); ?></h4>
+                            <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
+                                <p class="text-muted">
+                                    <?php
+                                    if($destination->price > 0)
+                                    {
+                                        echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                    }
+                                    ?>
+                                </p>
 
                                 <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
                                     {

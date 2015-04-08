@@ -63,6 +63,7 @@ class Users extends CI_Controller {
             $validation=$validation[0];
             $newdata = array(
                 'names'  => $validation->names,
+                'role'  => $validation->role,
                 'email'     => $validation->email,
                 'logged_in' => TRUE,
                 'user_id' =>$validation->user_id
