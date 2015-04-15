@@ -1,4 +1,4 @@
-<?php include_once('header.php') ?>
+<?php include_once('admin_header.php') ?>
 <!-- / header --> <!-- nav -->
 
 <!-- / nav -->
@@ -9,7 +9,7 @@
             <div class="col-sm-6">
                 <section class="panel">
                     <div class="panel-body">
-                        <form class="form-horizontal" method="post" action="<?php echo(base_url()); ?>pins/add_destinations" data-validate="parsley">
+                        <form class="form-horizontal" method="post" action="<?php echo(base_url()); ?>pins/add_destination" data-validate="parsley">
 
 
                             <div class="form-group"><label class="col-lg-3 control-label">Destination name</label>
@@ -31,10 +31,21 @@
                             <div class="form-group"><label class="col-lg-3 control-label">Destination type</label>
 
                                 <div class="col-lg-4"><select name="destination_type" class="form-control">
-                                        <option value="1">historic</option>
-                                        <option value="2">parks</option>
+                                        <option value="historic site">historic site</option>
+                                        <option value="game park">game park</option>
+                                        <option value="educational site">educational site</option>
+                                        <option value="cultural site">cultural site</option>
+                                        <option value="museum">museum</option>
+
                                     </select></div>
                             </div>
+
+                            <div class="form-group"><label class="col-lg-3 control-label">Entrance fee (if free, leave blank)</label>
+
+                                <div class="col-lg-8"><input type="text" name="price" placeholder="entrance fee (if free, leave blank)"
+                                                             data-required="true" class="form-control"></div>
+                            </div>
+
 
                             <div>
                                 <input type="hidden" name="longitude" id="long" value="">

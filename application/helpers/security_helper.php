@@ -19,6 +19,27 @@ function logged_in()
     }
 }
 
+
+function admin()
+{
+    $CI=get_instance();
+    $info=$CI->session->userdata('role');
+    if(!$info)
+    {
+        return false;
+    }else
+    {
+        if($info==1)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+}
+
+
 function get_destination_rating($destination_id)
 {
     $CI=get_instance();
@@ -39,10 +60,14 @@ function get_hotel_rating($hotel_id)
 }
 
 
-function get_user_name($user_id)
+function get_user_name($user_id=-1)
 {
     $CI=get_instance();
 
+    if($user_id==-1)
+    {
+        $user_id=$CI->session->userdata('user_id');
+    }
     $CI->db->where('user_id',$user_id);
     $query = $CI->db->get('users');
     return $query->result()[0]->names;

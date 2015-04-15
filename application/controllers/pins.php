@@ -125,17 +125,91 @@ class Pins extends Im_Controller
 //all setters
     public function add_hotel()
     {
-        $hotel_name=$this->input->post('hotel_name');
-        $hotel_type=$this->input->post('hotel_type');
-        $hotel_description=$this->input->post('hotel_description');
-        $longitude=$this->input->post('longitude');
-        $latitude=$this->input->post('latitude');
-        $user_id=$this->input->post('user_id');
-        $this->load->model('user_model');
-        $this->user_model->create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id,$hotel_name);
+
+
+
+        $this->config =  array(
+            'upload_path'     => dirname($_SERVER["SCRIPT_FILENAME"])."/files/",
+
+            'allowed_types'   => "gif|jpg|png|jpeg|pdf|doc|xml",
+            'overwrite'       => TRUE,
+            'max_size'        => "1000KB",
+            'max_height'      => "768",
+             'max_width'       => "1024"
+        );
+
+
+        $this->load->helper('form');
+        $this->load->helper('url');
+
+        $this->load->library('upload', $this->config);
+        if($this->upload->do_upload())
+        {
+            echo "file upload success";
+            $hotel_name=$this->input->post('hotel_name');
+            $hotel_type=$this->input->post('hotel_type');
+            $hotel_description=$this->input->post('hotel_description');
+            $longitude=$this->input->post('longitude');
+            $latitude=$this->input->post('latitude');
+            $user_id=$this->session->userdata('user_id');
+            $this->load->model('user_model');
+            $this->user_model->create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id,$hotel_name);
+            redirect(base_url());
+        }
+        else
+        {
+            echo "file upload failed";
+        }
+
+
+
 
     }
 
+
+    public function do_upload_hotel()
+    {
+
+        $config['upload_path'] = './files/';
+        $config['allowed_types'] = 'pdf|jpg|png';
+        $config['max_size']	= '5000';
+        //$config['file_name']=md5(time()).".pdf";
+        $config['overwrite']  = TRUE;
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload())
+        {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('error', $error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+
+            /*$alias=$this->upload->data()['file_name'];
+            $title=$this->input->post('title');
+            $this->load->model('magazine_model');
+            $this->magazine_model->create($title,$alias);*/
+
+
+            $image=$this->upload->data()['file_name'];
+            $hotel_name=$this->input->post('hotel_name');
+            $hotel_type=$this->input->post('hotel_type');
+            $hotel_description=$this->input->post('hotel_description');
+            $longitude=$this->input->post('longitude');
+            $latitude=$this->input->post('latitude');
+            $user_id=$this->session->userdata('user_id');
+            $this->load->model('user_model');
+            $this->user_model->create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id,$hotel_name,$image);
+            redirect(base_url());
+
+            redirect(base_url());
+        }
+    }
 
 
     public function add_room()
@@ -146,6 +220,7 @@ class Pins extends Im_Controller
         $price=$this->input->post('price');
         $this->load->model('user_model');
         $this->user_model->create_room($hotel_id,$room_type,$number_of_people,$price);
+
 
     }
 
@@ -159,9 +234,10 @@ class Pins extends Im_Controller
         $price=$this->input->post('price');
         $longitude=$this->input->post('longitude');
         $latitude=$this->input->post('latitude');
-        $user_id=$this->input->post('user_id');
+        $user_id=$this->session->userdata('user_id');
         $this->load->model('user_model');
         $this->user_model->create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id,$destination_name);
+        redirect(base_url());
     }
 
 

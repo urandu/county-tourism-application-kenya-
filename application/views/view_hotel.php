@@ -12,7 +12,7 @@
             <div class=" m-t">
                 <div id="gallery" class="gallery hide">
                     <div class="item"><img
-                            src="<?php echo(base_url()); ?>public/images/katoa.jpg">
+                            src="<?php echo(base_url()); ?>files/<?php  echo($hotel->image); ?>">
 
                         <div class="desc"><h4><?php  echo($hotel->hotel_name."    "); ?>&nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> )</h4>
 

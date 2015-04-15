@@ -43,10 +43,7 @@
 
 
                         <div class="line line-dashed"></div>
-                        <p class="text-muted text-center">
-                            <small>Do not have an account?</small>
-                        </p>
-                        <a href="<?php echo(base_url()); ?>users/signup" class="btn btn-white btn-block">Create an account</a></form>
+                        </form>
                 </section>
             </div>
         </div>

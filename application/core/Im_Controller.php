@@ -127,6 +127,14 @@ class Im_Controller extends CI_Controller {
           redirect("users/signin");
       }
    }
+    public function is_admin()
+    {
+
+        if(!admin())
+        {
+            redirect("users/signin_admin");
+        }
+    }
 }
 
 

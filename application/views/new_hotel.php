@@ -1,4 +1,4 @@
-<?php include_once('header.php') ?>
+<?php include_once('admin_header.php') ?>
 <!-- / header --> <!-- nav -->
 
 <!-- / nav -->
@@ -9,7 +9,7 @@
             <div class="col-sm-6">
                 <section class="panel">
                     <div class="panel-body">
-                        <form class="form-horizontal" method="post" action="<?php echo(base_url()); ?>pins/add_hotel" data-validate="parsley">
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo(base_url()); ?>pins/do_upload_hotel" data-validate="parsley">
 
 
                             <div class="form-group"><label class="col-lg-3 control-label">Hotel name</label>
@@ -18,6 +18,11 @@
                                                              data-required="true" class="form-control"></div>
                             </div>
 
+                            <div class="form-group"><label class="col-lg-3 control-label">Hotel image</label>
+
+                                <div class="col-lg-8"><input type="file" name="userfile" placeholder="select image"
+                                                             data-required="true" class="form-control"></div>
+                            </div>
                             <div class="form-group"><label class="col-lg-3 control-label">Hotel description</label>
 
                                 <div class="col-lg-8"><textarea name="hotel_description" placeholder="Hotel description" rows="5" class="form-control"
@@ -31,8 +36,10 @@
                             <div class="form-group"><label class="col-lg-3 control-label">Hotel type</label>
 
                                 <div class="col-lg-4"><select name="hotel_type" class="form-control">
-                                        <option value="1">motel</option>
-                                        <option value="2">villa</option>
+                                        <option value="motel">motel</option>
+                                        <option value="villa">villa</option>
+                                        <option value="lodge">lodge</option>
+                                        <option value="resort">resort</option>
                                     </select></div>
                             </div>
 
@@ -51,7 +58,7 @@
                             <div class="form-group">
                                 <div class="col-lg-9 col-lg-offset-3">
                                     <button type="submit" class="btn btn-white">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" value="upload" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
                         </form>

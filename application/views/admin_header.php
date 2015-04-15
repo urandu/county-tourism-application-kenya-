@@ -18,20 +18,16 @@
 <header id="header" class="navbar">
     <ul class="nav navbar-nav navbar-avatar pull-right">
         <li class="dropdown">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="hidden-xs-only">Martin Otieno</span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="hidden-xs-only"><?php echo(get_user_name()); ?></span>
                 <span class="thumb-small avatar inline">
                     <img src="<?php echo(base_url());?>public/images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
                 </span>
                 <b class="caret hidden-xs-only"></b>
             </a>
             <ul class="dropdown-menu pull-right">
-                <li><a href="index.html#">Settings</a></li>
-                <li><a href="index.html#">Profile</a></li>
-                <li><a href="index.html#"><span class="badge bg-danger pull-right">3</span>Notifications</a></li>
-                <li class="divider"></li>
-                <li><a href="docs.html">Help</a></li>
-                <li><a href="signin.html">Logout</a></li>
+
+                <li><a href="<?php echo(base_url()); ?>users/admin_logout">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -70,11 +66,11 @@
 <nav id="nav" class="nav-primary hidden-xs nav-vertical">
     <ul class="nav" data-spy="affix" data-offset-top="50">
         <li class="active"><a href="<?php echo(base_url()); ?>"><i class="fa fa-home fa-lg"></i><span>Home</span></a></li>
-        <li><a href="<?php echo(base_url()); ?>new_destination"><i class="fa fa-globe fa-lg"></i><span>Add Destination</span></a></li>
-        <li><a href="<?php echo(base_url()); ?>new_hotel"><i class="fa fa-credit-card fa-lg"></i><span>Add Hotel</span></a></li>
-        <li><a href="<?php echo(base_url()); ?>destination_bookings"><i class="fa fa-calendar fa-lg"></i><span>Destination bookings</span></a></li>
-        <li><a href="<?php echo(base_url()); ?>hotel_bookings"><i class="fa fa-suitcase fa-lg"></i><span>Hotel Bookings</span></a></li>
-        <li><a href="<?php echo(base_url()); ?>settings"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/new_destination"><i class="fa fa-globe fa-lg"></i><span>Add Destination</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/new_hotel"><i class="fa fa-credit-card fa-lg"></i><span>Add Hotel</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/destination_bookings"><i class="fa fa-calendar fa-lg"></i><span>Destination bookings</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/hotel_bookings"><i class="fa fa-suitcase fa-lg"></i><span>Hotel Bookings</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/settings"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>
 
 
     </ul>

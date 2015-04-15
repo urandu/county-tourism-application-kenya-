@@ -18,20 +18,16 @@
 <header id="header" class="navbar">
     <ul class="nav navbar-nav navbar-avatar pull-right">
         <li class="dropdown">
-            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="hidden-xs-only">Martin Otieno</span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="hidden-xs-only"><?php echo(get_user_name()); ?></span>
                 <span class="thumb-small avatar inline">
                     <img src="<?php echo(base_url());?>public/images/avatar.jpg" alt="Mika Sokeil" class="img-circle">
                 </span>
                 <b class="caret hidden-xs-only"></b>
             </a>
             <ul class="dropdown-menu pull-right">
-                <li><a href="index.html#">Settings</a></li>
-                <li><a href="index.html#">Profile</a></li>
-                <li><a href="index.html#"><span class="badge bg-danger pull-right">3</span>Notifications</a></li>
-                <li class="divider"></li>
-                <li><a href="docs.html">Help</a></li>
-                <li><a href="signin.html">Logout</a></li>
+                <li><a href="<?php echo(base_url()); ?>user/logout">Logout</a></li>
+
             </ul>
         </li>
     </ul>

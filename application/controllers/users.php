@@ -48,6 +48,12 @@ class Users extends CI_Controller {
         $this->load->view('signin');
     }
 
+    public function signin_admin()
+    {
+
+        $this->load->view('signin_admin');
+    }
+
     public function validate()
     {
         $password=md5($this->input->post('password'));
@@ -75,9 +81,55 @@ class Users extends CI_Controller {
 
     }
 
+    public function validate_admin()
+    {
+        $password=md5($this->input->post('password'));
+        $email=$this->input->post('email');
+
+        $validation=$this->user_model->validate($password,$email);
+        if(!$validation)
+        {
+            $data["error_message"]=true;
+            $this->load->view('signin_admin',$data);
+        }else
+        {
+            $validation=$validation[0];
+            if($validation->role==1)
+            {
+                $newdata = array(
+                    'names'  => $validation->names,
+                    'role'  => $validation->role,
+                    'email'     => $validation->email,
+                    'logged_in' => TRUE,
+                    'user_id' =>$validation->user_id
+                );
+
+                $this->session->set_userdata($newdata);
+                redirect(base_url());
+            }else
+            {
+                $data["error_message"]=true;
+                $this->load->view('signin_admin',$data);
+            }
+
+        }
+
+    }
+
+
     public function logout()
     {
 
+        $this->session->sess_destroy();
+        redirect(base_url()."pins");
+    }
+
+
+    public function admin_logout()
+    {
+
+        $this->session->sess_destroy();
+        redirect(base_url());
     }
 
 }
