@@ -17,7 +17,7 @@
                     {
                     ?>
                     <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media"><div class="item"><img
-                                src="<?php echo(base_url()); ?>public/images/katoa.jpg">
+                                src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
 
                             <div class="desc"><h4><?php echo($hotel->hotel_name); ?></h4>
 

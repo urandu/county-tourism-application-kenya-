@@ -207,9 +207,55 @@ class Pins extends Im_Controller
             $this->user_model->create_hotel($hotel_type,$hotel_description,$longitude,$latitude,$user_id,$hotel_name,$image);
             redirect(base_url());
 
+
+        }
+    }
+
+
+
+    public function do_upload_destination()
+    {
+
+        $config['upload_path'] = './files/';
+        $config['allowed_types'] = 'pdf|jpg|png';
+        $config['max_size']	= '5000';
+        //$config['file_name']=md5(time()).".pdf";
+        $config['overwrite']  = TRUE;
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload())
+        {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('error', $error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+
+            /*$alias=$this->upload->data()['file_name'];
+            $title=$this->input->post('title');
+            $this->load->model('magazine_model');
+            $this->magazine_model->create($title,$alias);*/
+
+
+            $image=$this->upload->data()['file_name'];
+            $destination_name=$this->input->post('destination_name');
+            $destination_type=$this->input->post('destination_type');
+            $destination_description=$this->input->post('destination_description');
+            $price=$this->input->post('price');
+            $longitude=$this->input->post('longitude');
+            $latitude=$this->input->post('latitude');
+            $user_id=$this->session->userdata('user_id');
+            $this->load->model('user_model');
+            $this->user_model->create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id,$destination_name,$image);
             redirect(base_url());
         }
     }
+
 
 
     public function add_room()

@@ -27,6 +27,26 @@ class Welcome extends Im_Controller
         $this->load->view('new_hotel',$data);
     }
 
+
+    public function my_destinations()
+    {
+        $this->load->model('user_model');
+        $destinations=$this->user_model->get_all_my_destinations($this->session->userdata('user_id'));
+        $data['destinations']=$destinations;
+        $data['page_title']='My Destinations';
+        $this->load->view('my_destinations',$data);
+    }
+
+    public function my_hotels()
+    {
+        $this->load->model('user_model');
+        $hotels=$this->user_model->get_all_my_hotels($this->session->userdata('user_id'));
+        $data['hotels']=$hotels;
+        $data['page_title']='My Hotels';
+        $this->load->view('my_hotels',$data);
+    }
+
+
     public function destination_bookings()
     {
         $data['page_title']='Destination Bookings';

@@ -68,6 +68,8 @@
         <li class="active"><a href="<?php echo(base_url()); ?>"><i class="fa fa-home fa-lg"></i><span>Home</span></a></li>
         <li><a href="<?php echo(base_url()); ?>welcome/new_destination"><i class="fa fa-globe fa-lg"></i><span>Add Destination</span></a></li>
         <li><a href="<?php echo(base_url()); ?>welcome/new_hotel"><i class="fa fa-credit-card fa-lg"></i><span>Add Hotel</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/my_destinations"><i class="fa fa-globe fa-lg"></i><span>My Destinations</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>welcome/my_hotels"><i class="fa fa-credit-card fa-lg"></i><span>My Hotels</span></a></li>
         <li><a href="<?php echo(base_url()); ?>welcome/destination_bookings"><i class="fa fa-calendar fa-lg"></i><span>Destination bookings</span></a></li>
         <li><a href="<?php echo(base_url()); ?>welcome/hotel_bookings"><i class="fa fa-suitcase fa-lg"></i><span>Hotel Bookings</span></a></li>
         <li><a href="<?php echo(base_url()); ?>welcome/settings"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>

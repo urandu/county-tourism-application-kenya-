@@ -9,12 +9,17 @@
             <div class="col-sm-6">
                 <section class="panel">
                     <div class="panel-body">
-                        <form class="form-horizontal" method="post" action="<?php echo(base_url()); ?>pins/add_destination" data-validate="parsley">
+                        <form class="form-horizontal" enctype="multipart/form-data" method="post" action="<?php echo(base_url()); ?>pins/do_upload_destination" data-validate="parsley">
 
 
                             <div class="form-group"><label class="col-lg-3 control-label">Destination name</label>
 
                                 <div class="col-lg-8"><input type="text" name="destination_name" placeholder="Destination name"
+                                                             data-required="true" class="form-control"></div>
+                            </div>
+                            <div class="form-group"><label class="col-lg-3 control-label">Destination image</label>
+
+                                <div class="col-lg-8"><input type="file" name="userfile" placeholder="select image"
                                                              data-required="true" class="form-control"></div>
                             </div>
 

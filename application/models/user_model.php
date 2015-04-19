@@ -47,7 +47,7 @@ class User_model extends CI_Model {
 
 
 
-    public function create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id,$destination_name)
+    public function create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id,$destination_name,$image)
     {
         $data=array(
             'destination_type'=>$destination_type,
@@ -56,7 +56,8 @@ class User_model extends CI_Model {
             'longitude'=>$longitude,
             'latitude'=>$latitude,
             'user_id'=>$user_id,
-            'destination_name'=>$destination_name
+            'destination_name'=>$destination_name,
+            'image'=>$image
         );
         $this->db->insert('destinations',$data);
     }
@@ -67,6 +68,15 @@ class User_model extends CI_Model {
         $result=$this->db->get('destinations');
         return $result->result();
     }
+
+    public function get_all_my_destinations($user_id)
+    {
+
+        $this->db->where('user_id',$user_id);
+        $result=$this->db->get('destinations');
+        return $result->result();
+    }
+
 
     public function get_destination($destination_id)
     {
@@ -89,6 +99,15 @@ class User_model extends CI_Model {
     public function get_all_hotels()
     {
 
+        $result=$this->db->get('hotels');
+        return $result->result();
+    }
+
+
+    public function get_all_my_hotels($user_id)
+    {
+
+        $this->db->where('user_id',$user_id);
         $result=$this->db->get('hotels');
         return $result->result();
     }

@@ -8,7 +8,7 @@
             <div class=" m-t">
             <div id="gallery" class="gallery hide">
                 <div class="item"><img
-                            src="<?php echo(base_url()); ?>public/images/arabuko.jpg">
+                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
                     <div class="desc"><h4><?php  echo($destination->destination_name."    "); ?>&nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> )</h4>
                         <p class="text-muted">
