@@ -27,6 +27,13 @@ class Welcome extends Im_Controller
         $this->load->view('new_hotel',$data);
     }
 
+    public function new_hotel_room($hotel_id)
+    {
+        $data['hotel_id']=$hotel_id;
+        $data['page_title']='New Room';
+        $this->load->view('new_hotel_room',$data);
+    }
+
 
     public function my_destinations()
     {
@@ -64,6 +71,50 @@ class Welcome extends Im_Controller
         $data['page_title']='';
         $this->load->view('',$data);
     }
+
+
+    public function do_upload_hotel_room()
+    {
+
+        $config['upload_path'] = './files/';
+        $config['allowed_types'] = 'pdf|jpg|png';
+        $config['max_size']	= '5000';
+        //$config['file_name']=md5(time()).".pdf";
+        $config['overwrite']  = TRUE;
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload())
+        {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('error', $error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+
+            /*$alias=$this->upload->data()['file_name'];
+            $title=$this->input->post('title');
+            $this->load->model('magazine_model');
+            $this->magazine_model->create($title,$alias);*/
+
+
+            $image=$this->upload->data()['file_name'];
+            $hotel_id=$this->input->post('hotel_id');
+            $room_type=$this->input->post('room_type');
+            $number_of_people=$this->input->post('number_of_people');
+            $price=$this->input->post('price');
+            $this->load->model('user_model');
+            $this->user_model->create_room($hotel_id,$room_type,$number_of_people,$price,$image);
+            redirect(base_url()."welcome/my_hotels");
+
+
+        }
+    }
+
 
 
 

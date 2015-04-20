@@ -208,13 +208,14 @@ class User_model extends CI_Model {
 
 
 
-    public function create_room($hotel_id,$room_type,$number_of_people,$price){
+    public function create_room($hotel_id,$room_type,$number_of_people,$price,$image){
 
         $data=array(
             'hotel_id'=>$hotel_id,
             'room_type'=>$room_type,
             'number_of_people'=>$number_of_people,
-            'price'=>$price
+            'price'=>$price,
+            'image'=>$image
         );
         $this->db->insert('rooms',$data);
 
