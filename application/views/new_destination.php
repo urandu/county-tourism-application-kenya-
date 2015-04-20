@@ -38,7 +38,7 @@
                                 <div class="col-lg-4"><select name="destination_type" class="form-control">
                                         <option value="historic site">historic site</option>
                                         <option value="game park">game park</option>
-                                        <option value="educational site">educational site</option>
+                                        <option value="sporting activities">sporting activities</option>
                                         <option value="cultural site">cultural site</option>
                                         <option value="museum">museum</option>
 

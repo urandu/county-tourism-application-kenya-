@@ -40,6 +40,7 @@
                                         <option value="villa">villa</option>
                                         <option value="lodge">lodge</option>
                                         <option value="resort">resort</option>
+                                        <option value="apartments">apartments</option>
                                     </select></div>
                             </div>
 

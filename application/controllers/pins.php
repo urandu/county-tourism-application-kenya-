@@ -18,12 +18,36 @@ class Pins extends Im_Controller
     public function plan_trip()
     {
 
-        $this->load->model('user_model');
+        /*$this->load->model('user_model');
+        $destinations=$this->user_model->get_all_destinations();
+        $data['destinations']=$destinations;*/
+        $data['page_title']='Plan Trip';
+        $this->load->view('select_dates',$data);
+    }
+
+
+    public function plan_trip2()
+    {
+
+        $start=strtotime($this->input->post('start'));
+        $end=strtotime($this->input->post('end'));
+        echo("start  :".$this->input->post('start'));
+        echo("<br>end  :".$this->input->post('end'));
+        echo("<br>days  :");
+        $date1=date_create($this->input->post('start'));
+        $date2=date_create($this->input->post('end'));
+        $diff=date_diff($date1,$date2);
+        //echo($diff);
+        $s= $diff->format("Total number of days: %a.");
+        echo($s);
+       /* $this->load->model('user_model');
         $destinations=$this->user_model->get_all_destinations();
         $data['destinations']=$destinations;
         $data['page_title']='Plan Trip';
-        $this->load->view('plan_trip',$data);
+        $this->load->view('plan_trip',$data);*/
     }
+
+
     public function map()
     {
         $data['page_title']='Map';
@@ -81,7 +105,7 @@ class Pins extends Im_Controller
         $destinations=$this->user_model->get_all_destinations();
         $data['destinations']=$destinations;
         $data['page_title']='Tour Destinations';
-        $this->load->view('destinations',$data);
+        $this->load->view('destinations2',$data);
     }
 
     public function view_destination($destination_id)
