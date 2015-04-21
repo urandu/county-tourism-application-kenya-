@@ -14,11 +14,6 @@
             <div class=" m-t">
                 <div id="gallery" class="gallery hide">
 
-                    <?php
-
-                    foreach($destinations as $destination)
-                    {
-                    ?>
 
 
 
@@ -32,39 +27,51 @@
                                         <div class="panel-body text-small">
 
                                             <?php
-
-                                            if($destination->destination_type=='historic site')
+                                            foreach($destinations as $destination)
                                             {
                                                 ?>
 
-                                                <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media"><div class=""><img
-                                                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                                                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
+                                                <?php
+
+                                                if($destination->destination_type=='historic site')
+                                                {
+                                                    ?>
+
+                                                    <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class=""><img
+                                                                src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+
+                                                            <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                                                            <p class="text-muted">
-                                                                <?php
-                                                                if($destination->price > 0)
-                                                                {
-                                                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                                                                }
-                                                                ?>
-                                                            </p>
+                                                                <p class="text-muted">
+                                                                    <?php
+                                                                    if($destination->price > 0)
+                                                                    {
+                                                                        echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                                                    }
+                                                                    ?>
+                                                                </p>
 
-                                                            <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                                                {
-                                                                    echo(substr($destination->destination_description,0,100));
-                                                                }else
-                                                                {
-                                                                    echo($destination->destination_description);
-                                                                }
-                                                                ?></p>
-                                                        </div></a>
+                                                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                                                    {
+                                                                        echo(substr($destination->destination_description,0,100));
+                                                                    }else
+                                                                    {
+                                                                        echo($destination->destination_description);
+                                                                    }
+                                                                    ?></p>
+                                                            </div></a>
+
+                                                <?php
+                                                }
+                                                ?>
+
 
                                             <?php
                                             }
                                             ?>
+
 
                                         </div>
                                     </div>
@@ -75,40 +82,53 @@
                                             Game Parks </a></div>
                                     <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body text-small">
-                                            <?php
 
-                                            if($destination->destination_type=='game park')
+                                            <?php
+                                            foreach($destinations as $destination)
                                             {
                                                 ?>
 
-                                                <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media"><div class=""><img
-                                                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                                                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
+                                                <?php
+
+                                                if($destination->destination_type=='game park')
+                                                {
+                                                    ?>
+
+                                                    <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class=""><img
+                                                                src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+
+                                                            <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                                                            <p class="text-muted">
-                                                                <?php
-                                                                if($destination->price > 0)
-                                                                {
-                                                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                                                                }
-                                                                ?>
-                                                            </p>
+                                                                <p class="text-muted">
+                                                                    <?php
+                                                                    if($destination->price > 0)
+                                                                    {
+                                                                        echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                                                    }
+                                                                    ?>
+                                                                </p>
 
-                                                            <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                                                {
-                                                                    echo(substr($destination->destination_description,0,100));
-                                                                }else
-                                                                {
-                                                                    echo($destination->destination_description);
-                                                                }
-                                                                ?></p>
-                                                        </div></a>
+                                                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                                                    {
+                                                                        echo(substr($destination->destination_description,0,100));
+                                                                    }else
+                                                                    {
+                                                                        echo($destination->destination_description);
+                                                                    }
+                                                                    ?></p>
+                                                            </div></a>
+
+                                                <?php
+                                                }
+                                                ?>
+
 
                                             <?php
                                             }
                                             ?>
+
 
                                         </div>
                                     </div>
@@ -122,39 +142,51 @@
 
 
                                             <?php
-
-                                            if($destination->destination_type=='sporting activities')
+                                            foreach($destinations as $destination)
                                             {
                                                 ?>
 
-                                                <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media"><div class=""><img
-                                                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                                                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
+                                                <?php
+
+                                                if($destination->destination_type=='sporting activities')
+                                                {
+                                                    ?>
+
+                                                    <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class=""><img
+                                                                src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+
+                                                            <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                                                            <p class="text-muted">
-                                                                <?php
-                                                                if($destination->price > 0)
-                                                                {
-                                                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                                                                }
-                                                                ?>
-                                                            </p>
+                                                                <p class="text-muted">
+                                                                    <?php
+                                                                    if($destination->price > 0)
+                                                                    {
+                                                                        echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                                                    }
+                                                                    ?>
+                                                                </p>
 
-                                                            <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                                                {
-                                                                    echo(substr($destination->destination_description,0,100));
-                                                                }else
-                                                                {
-                                                                    echo($destination->destination_description);
-                                                                }
-                                                                ?></p>
-                                                        </div></a>
+                                                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                                                    {
+                                                                        echo(substr($destination->destination_description,0,100));
+                                                                    }else
+                                                                    {
+                                                                        echo($destination->destination_description);
+                                                                    }
+                                                                    ?></p>
+                                                            </div></a>
+
+                                                <?php
+                                                }
+                                                ?>
+
 
                                             <?php
                                             }
                                             ?>
+
 
 
                                         </div>
@@ -168,39 +200,51 @@
                                         <div class="panel-body text-small">
 
                                             <?php
-
-                                            if($destination->destination_type=='cultural site')
+                                            foreach($destinations as $destination)
                                             {
                                                 ?>
 
-                                                <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media"><div class=""><img
-                                                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                                                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
+                                                <?php
+
+                                                if($destination->destination_type=='cultural site')
+                                                {
+                                                    ?>
+
+                                                    <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class=""><img
+                                                                src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+
+                                                            <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                                                            <p class="text-muted">
-                                                                <?php
-                                                                if($destination->price > 0)
-                                                                {
-                                                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                                                                }
-                                                                ?>
-                                                            </p>
+                                                                <p class="text-muted">
+                                                                    <?php
+                                                                    if($destination->price > 0)
+                                                                    {
+                                                                        echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                                                    }
+                                                                    ?>
+                                                                </p>
 
-                                                            <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                                                {
-                                                                    echo(substr($destination->destination_description,0,100));
-                                                                }else
-                                                                {
-                                                                    echo($destination->destination_description);
-                                                                }
-                                                                ?></p>
-                                                        </div></a>
+                                                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                                                    {
+                                                                        echo(substr($destination->destination_description,0,100));
+                                                                    }else
+                                                                    {
+                                                                        echo($destination->destination_description);
+                                                                    }
+                                                                    ?></p>
+                                                            </div></a>
+
+                                                <?php
+                                                }
+                                                ?>
+
 
                                             <?php
                                             }
                                             ?>
+
 
                                         </div>
                                     </div>
@@ -213,39 +257,51 @@
                                         <div class="panel-body text-small">
 
                                             <?php
-
-                                            if($destination->destination_type=='museum')
+                                            foreach($destinations as $destination)
                                             {
                                                 ?>
 
-                                                <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class=""><img
-                                                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                                                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
+                                                <?php
+
+                                                if($destination->destination_type=='museum')
+                                                {
+                                                    ?>
+
+                                                    <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class=""><img
+                                                                src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+
+                                                            <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                                                            <p class="text-muted">
-                                                                <?php
-                                                                if($destination->price > 0)
-                                                                {
-                                                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                                                                }
-                                                                ?>
-                                                            </p>
+                                                                <p class="text-muted">
+                                                                    <?php
+                                                                    if($destination->price > 0)
+                                                                    {
+                                                                        echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                                                    }
+                                                                    ?>
+                                                                </p>
 
-                                                            <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                                                {
-                                                                    echo(substr($destination->destination_description,0,100));
-                                                                }else
-                                                                {
-                                                                    echo($destination->destination_description);
-                                                                }
-                                                                ?></p>
-                                                        </div></a>
+                                                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                                                    {
+                                                                        echo(substr($destination->destination_description,0,100));
+                                                                    }else
+                                                                    {
+                                                                        echo($destination->destination_description);
+                                                                    }
+                                                                    ?></p>
+                                                            </div></a>
+
+                                                <?php
+                                                }
+                                                ?>
+
 
                                             <?php
                                             }
                                             ?>
+
 
 
                                         </div>
@@ -260,10 +316,7 @@
                         </div>
 
 
-                <?php
-                }
 
-                ?>
 
                     </div>
             </div>

@@ -60,6 +60,15 @@ function get_hotel_rating($hotel_id)
 }
 
 
+ function get_rooms($hotel_id)
+{
+    $CI=get_instance();
+    $CI->db->where('hotel_id',$hotel_id);
+    $result=$CI->db->get('rooms');
+    return $result->result();
+}
+
+
 function get_user_name($user_id=-1)
 {
     $CI=get_instance();
@@ -71,4 +80,26 @@ function get_user_name($user_id=-1)
     $CI->db->where('user_id',$user_id);
     $query = $CI->db->get('users');
     return $query->result()[0]->names;
+}
+
+
+function get_hotel_name($hotel_id)
+{
+    $CI=get_instance();
+
+
+    $CI->db->where('hotel_id',$hotel_id);
+    $query = $CI->db->get('hotels');
+    return $query->result()[0]->hotel_name;
+}
+
+
+function get_destination_name($destination_id)
+{
+    $CI=get_instance();
+
+
+    $CI->db->where('destination_id',$destination_id);
+    $query = $CI->db->get('destinations');
+    return $query->result()[0]->destination_name;
 }

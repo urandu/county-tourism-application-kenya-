@@ -31,12 +31,11 @@ class User_model extends CI_Model {
 
 
 
-    public function create_destination_booking($destination_id,$amount_to_be_paid,$amount_paid,$user_id,$date_of_trip)
+    public function create_destination_booking($destination_id,$user_id,$date_of_trip,$number_of_people)
     {
         $data=array(
             'destination_id'=>$destination_id,
-            'amount_to_be_paid'=>$amount_to_be_paid,
-            'amount_paid'=>$amount_paid,
+            'number_of_people'=>$number_of_people,
             'user_id'=>$user_id,
             'date_of_trip'=>$date_of_trip
 
@@ -68,6 +67,14 @@ class User_model extends CI_Model {
         $result=$this->db->get('destinations');
         return $result->result();
     }
+
+    public function get_rooms($hotel_id)
+    {
+        $this->db->where('hotel_id',$hotel_id);
+        $result=$this->db->get('rooms');
+        return $result->result();
+    }
+
 
     public function get_all_my_destinations($user_id)
     {
@@ -144,14 +151,13 @@ class User_model extends CI_Model {
         $this->db->insert('hotels',$data);
     }
 
-    public function create_hotel_booking($hotel_id,$room_id,$amount_to_be_paid,$no_of_people,$amount_paid,$user_id,$date_from,$date_to)
+    public function create_hotel_booking($hotel_id,$room_id,$no_of_people,$user_id,$date_from,$date_to,$no_of_rooms)
     {
         $data=array(
             'hotel_id'=>$hotel_id,
             'room_id'=>$room_id,
-            'amount_to_be_paid'=>$amount_to_be_paid,
+            'no_of_rooms'=>$no_of_rooms,
             'no_of_people'=>$no_of_people,
-            'amount_paid'=>$amount_paid,
             'user_id'=>$user_id,
             'date_from'=>$date_from,
             'date_to'=>$date_to
@@ -254,6 +260,19 @@ class User_model extends CI_Model {
     }
 
 
+    public function get_hotel_bookings($user_id)
+    {
+        $this->db->where('user_id',$user_id);
+        $result=$this->db->get('hotel_bookings');
+        return $result->result();
+    }
+
+    public function get_destination_bookings($user_id)
+    {
+        $this->db->where('user_id',$user_id);
+        $result=$this->db->get('destination_bookings');
+        return $result->result();
+    }
 
 
 

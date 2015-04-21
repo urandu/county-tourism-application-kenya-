@@ -15,6 +15,7 @@
 </head>
 <body class="navbar-fixed" >
 <!-- header -->
+<input type="hidden" id="base_url" value="<?php echo(base_url()); ?>">
 <header id="header" class="navbar">
     <ul class="nav navbar-nav navbar-avatar pull-right">
         <li class="dropdown">
@@ -38,35 +39,9 @@
     </button>
     <ul class="nav navbar-nav hidden-xs">
         <li>
-            <div class="m-t m-b-small" id="panel-notifications">
-                <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-comment-o fa-fw fa-lg text-default"></i>
-                    <b class="badge badge-notes bg-danger count-n">2</b>
-                </a>
-                <section class="dropdown-menu m-l-small m-t-mini">
-                    <section class="panel panel-large arrow arrow-top">
-                        <header class="panel-heading bg-white"><span class="h5"><strong>You have <span
-                                        class="count-n">2</span> notifications</strong></span></header>
-                        <div class="list-group"><a href="index.html#" class="media list-group-item"> <span
-                                    class="pull-left thumb-small"><img src="images/kilifi1.jpg" alt="John said"
-                                                                       class="img-circle"></span> <span
-                                    class="media-body block m-b-none"> Moved to Bootstrap 3.0<br> <small
-                                        class="text-muted">23 June 13
-                                    </small> </span> </a> <a href="index.html#" class="media list-group-item"> <span
-                                    class="media-body block m-b-none"> first v.1 (Bootstrap 2.3 based) released<br> <small
-                                        class="text-muted">19 June 13
-                                    </small> </span> </a></div>
-                        <footer class="panel-footer text-small"><a href="index.html#" class="pull-right"><i
-                                    class="fa fa-cog"></i></a> <a href="index.html#">See all the notifications</a>
-                        </footer>
-                    </section>
-                </section>
-            </div>
+
         </li>
-        <li>
-            <div class="m-t-small"><a class="btn btn-sm btn-info" data-toggle="modal" href="index.html#modal"><i
-                        class="fa fa-fw fa-plus"></i> POST</a></div>
-        </li>
+
 
     </ul>
     <!--<form class="navbar-form pull-left shift" action="index.html" data-toggle="shift:appendTo"
@@ -84,6 +59,7 @@
         <li><a href="<?php echo(base_url()); ?>pins/destinations"><i class="fa fa-globe fa-lg"></i><span>Destinations</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/hotels"><i class="fa fa-credit-card fa-lg"></i><span>Hotels</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/plan_trip"><i class="fa fa-calendar-o fa-lg"></i><span>Plan Trip</span></a></li>
+        <li><a href="<?php echo(base_url()); ?>pins/book_hotel"><i class="fa fa-credit-card fa-lg"></i><span>Book Accommodation</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/trips"><i class="fa fa-calendar fa-lg"></i><span>Planned Trips</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/bookings"><i class="fa fa-suitcase fa-lg"></i><span>Hotel Bookings</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/map"><i class="fa fa-map-marker fa-lg"></i><span>Map</span></a></li>

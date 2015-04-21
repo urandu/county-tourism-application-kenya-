@@ -18,9 +18,9 @@ class Pins extends Im_Controller
     public function plan_trip()
     {
 
-        /*$this->load->model('user_model');
+        $this->load->model('user_model');
         $destinations=$this->user_model->get_all_destinations();
-        $data['destinations']=$destinations;*/
+        $data['destinations']=$destinations;
         $data['page_title']='Plan Trip';
         $this->load->view('select_dates',$data);
     }
@@ -60,6 +60,9 @@ class Pins extends Im_Controller
     }
     public function trips()
     {
+        $this->load->model('user_model');
+        $bookings=$this->user_model->get_destination_bookings($this->session->userdata('user_id'));
+        $data['bookings']=$bookings;
         $data['page_title']='Trips';
         $this->load->view('trips',$data);
     }
@@ -73,6 +76,9 @@ class Pins extends Im_Controller
     public function bookings()
     {
 
+        $this->load->model('user_model');
+        $bookings=$this->user_model->get_hotel_bookings($this->session->userdata('user_id'));
+        $data['bookings']=$bookings;
         $data['page_title']='My Bookings';
         $this->load->view('bookings',$data);
     }
@@ -129,7 +135,7 @@ class Pins extends Im_Controller
         $hotels=$this->user_model->get_all_hotels();
         $data['hotels']=$hotels;
         $data['page_title']='Hotels';
-        $this->load->view('hotels',$data);
+        $this->load->view('hotels2',$data);
     }
 
     public function view_hotel($hotel_id)
@@ -141,6 +147,19 @@ class Pins extends Im_Controller
         $data['hotel']=$hotel[0];
         $data['page_title']='Accommodation';
         $this->load->view('view_hotel',$data);
+    }
+
+
+
+    public function hotel_b($hotel_id)
+    {
+        $this->load->model('user_model');
+        $hotel=$this->user_model->get_hotel($hotel_id);
+        $ratings=$this->user_model->get_hotel_ratings($hotel_id);
+        $data['ratings']=$ratings;
+        $data['hotel']=$hotel[0];
+        $data['page_title']='Book hotel';
+        $this->load->view('hotel_b',$data);
     }
 
 
@@ -236,6 +255,15 @@ class Pins extends Im_Controller
     }
 
 
+    public function book_hotel()
+    {
+
+        $this->load->model('user_model');
+        $hotels=$this->user_model->get_all_hotels();
+        $data['hotels']=$hotels;
+        $data['page_title']='Book hotel';
+        $this->load->view('book_hotel',$data);
+    }
 
     public function do_upload_destination()
     {
@@ -343,26 +371,32 @@ class Pins extends Im_Controller
     {
         $room_id=$this->input->post('room_id');
         $hotel_id=$this->input->post('hotel_id');
-        $amount_to_be_paid=$this->input->post('amount_to_be_paid');
-        $user_id=$this->input->post('user_id');
+      //  $amount_to_be_paid=$this->input->post('amount_to_be_paid');
+        $user_id=$this->session->userdata('user_id');
         $no_of_people=$this->input->post('no_of_people');
-        $amount_paid=$this->input->post('amount_paid');
+        $no_of_rooms=$this->input->post('no_of_rooms');
+        //$amount_paid=$this->input->post('amount_paid');
         $date_to=$this->input->post('date_to');
         $date_from=$this->input->post('date_from');
         $this->load->model('user_model');
-        $this->user_model->create_hotel_booking($hotel_id,$room_id,$amount_to_be_paid,$no_of_people,$amount_paid,$user_id,$date_from,$date_to);
+        $this->user_model->create_hotel_booking($hotel_id,$room_id,$no_of_people,$user_id,$date_from,$date_to,$no_of_rooms);
 
+        $data['page_title']='Kilifi County';
+        $this->load->view('home');
     }
 
     public function add_destination_booking()
     {
         $destination_id=$this->input->post('destination_id');
         $date_of_trip=$this->input->post('date_of_trip');
-        $amount_to_be_paid=$this->input->post('amount_to_be_paid');
-        $user_id=$this->input->post('user_id');
-        $amount_paid=$this->input->post('amount_paid');
+        $number_of_people=$this->input->post('number_of_people');
+        //$amount_to_be_paid=$this->input->post('amount_to_be_paid');
+        $user_id=$this->session->userdata('user_id');
+        //$amount_paid=$this->input->post('amount_paid');
         $this->load->model('user_model');
-        $this->user_model->create_destination_booking($destination_id,$amount_to_be_paid,$amount_paid,$user_id,$date_of_trip);
+        $this->user_model->create_destination_booking($destination_id,$user_id,$date_of_trip,$number_of_people);
+        echo(1);
+        session_write_close ();
 
     }
 
