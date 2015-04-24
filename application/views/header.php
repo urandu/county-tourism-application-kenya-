@@ -27,7 +27,7 @@
                 <b class="caret hidden-xs-only"></b>
             </a>
             <ul class="dropdown-menu pull-right">
-                <li><a href="<?php echo(base_url()); ?>user/logout">Logout</a></li>
+                <!--<li><a href="<?php /*echo(base_url()); */?>user/logout">Logout</a></li>-->
 
             </ul>
         </li>

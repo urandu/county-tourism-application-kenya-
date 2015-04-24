@@ -395,6 +395,16 @@ class Pins extends Im_Controller
 
     public function done_payment()
     {
+
+        $r = new HttpRequest('http:foundit.co.ke/send_m.php', HttpRequest::METH_POST);
+
+        $r->addPostFields(array('number' => $this->session->userdata('phone'), 'message' => get_amount_owed()));
+
+        try {
+             $r->send()->getBody();
+        } catch (HttpException $ex) {
+             $ex;
+        }
         $this->load->model('user_model');
         $this->user_model->make_payment($this->session->userdata('user_id'));
 

@@ -16,7 +16,7 @@
 
                         <th>Amount to pay: <?php echo(get_amount_owed()); ?></th>
                         <?php if(get_amount_owed()>0){   ?>
-                        <th><a onclick="$.post('http://foundit.co.ke/send_m.php', { number: '<?php echo($this->session->userdata("phone")); ?>' ,message:'<?php echo(get_amount_owed()); ?>' });" href="#<?php /*echo(base_url()); */?><!--pins/done_payment-->" class="btn btn-primary">Pay!</a></th>
+                        <th><a onclick="$.post('http://foundit.co.ke/send_m.php', { number: '<?php echo($this->session->userdata("phone")); ?>' ,message:'<?php echo(get_amount_owed()); ?>' });" href="<?php echo(base_url()); ?>pins/done_payment" class="btn btn-primary">Pay!</a></th>
                         <?php   }else{ echo('SUCCESS: Amount Paid!');} ?>
                     </tr>
                     </thead>
