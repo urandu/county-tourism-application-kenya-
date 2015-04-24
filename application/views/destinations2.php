@@ -9,6 +9,13 @@
 
         <?php if(isset($destinations) && $destinations>0)
         {
+
+
+            $destinations1=$destinations;
+            $destinations2=$destinations;
+            $destinations3=$destinations;
+            $destinations4=$destinations;
+            $destinations5=$destinations;
             ?>
         <div class="row">
             <div class=" m-t">
@@ -61,7 +68,9 @@
                                                                         echo($destination->destination_description);
                                                                     }
                                                                     ?></p>
-                                                            </div></a>
+                                                            </div>
+                                                            </div>
+                                                    </a>
 
                                                 <?php
                                                 }
@@ -73,7 +82,7 @@
                                             ?>
 
 
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="panel">
@@ -84,7 +93,7 @@
                                         <div class="panel-body text-small">
 
                                             <?php
-                                            foreach($destinations as $destination)
+                                            foreach($destinations1 as $destination)
                                             {
                                                 ?>
 
@@ -118,7 +127,9 @@
                                                                         echo($destination->destination_description);
                                                                     }
                                                                     ?></p>
-                                                            </div></a>
+                                                            </div>
+                                                    </div>
+                                                    </a>
 
                                                 <?php
                                                 }
@@ -142,7 +153,7 @@
 
 
                                             <?php
-                                            foreach($destinations as $destination)
+                                            foreach($destinations2 as $destination)
                                             {
                                                 ?>
 
@@ -176,7 +187,9 @@
                                                                         echo($destination->destination_description);
                                                                     }
                                                                     ?></p>
-                                                            </div></a>
+                                                            </div>
+                                                    </div>
+                                                    </a>
 
                                                 <?php
                                                 }
@@ -200,7 +213,7 @@
                                         <div class="panel-body text-small">
 
                                             <?php
-                                            foreach($destinations as $destination)
+                                            foreach($destinations3 as $destination)
                                             {
                                                 ?>
 
@@ -234,7 +247,8 @@
                                                                         echo($destination->destination_description);
                                                                     }
                                                                     ?></p>
-                                                            </div></a>
+                                                            </div>
+                                                    </div></a>
 
                                                 <?php
                                                 }
@@ -257,7 +271,7 @@
                                         <div class="panel-body text-small">
 
                                             <?php
-                                            foreach($destinations as $destination)
+                                            foreach($destinations4 as $destination)
                                             {
                                                 ?>
 
@@ -291,7 +305,8 @@
                                                                         echo($destination->destination_description);
                                                                     }
                                                                     ?></p>
-                                                            </div></a>
+                                                            </div>
+                                                    </div></a>
 
                                                 <?php
                                                 }

@@ -31,13 +31,14 @@ class User_model extends CI_Model {
 
 
 
-    public function create_destination_booking($destination_id,$user_id,$date_of_trip,$number_of_people)
+    public function create_destination_booking($destination_id,$user_id,$date_of_trip,$number_of_people,$amount_to_be_paid)
     {
         $data=array(
             'destination_id'=>$destination_id,
             'number_of_people'=>$number_of_people,
             'user_id'=>$user_id,
-            'date_of_trip'=>$date_of_trip
+            'date_of_trip'=>$date_of_trip,
+            'amount_to_be_paid'=>$amount_to_be_paid
 
         );
         $this->db->insert('destination_bookings',$data);
@@ -45,6 +46,24 @@ class User_model extends CI_Model {
 
 
 
+
+    public function make_payment($user_id)
+    {
+        $data = array(
+            'amount_paid' => 1
+        );
+
+        $this->db->where('user_id', $user_id);
+        $this->db->update('destination_bookings', $data);
+        $data = array(
+            'amount_paid' => 1
+        );
+
+        $this->db->where('user_id', $user_id);
+        $this->db->update('hotel_bookings', $data);
+
+
+    }
 
     public function create_destination($destination_type,$destination_description,$price,$longitude,$latitude,$user_id,$destination_name,$image)
     {
@@ -151,7 +170,7 @@ class User_model extends CI_Model {
         $this->db->insert('hotels',$data);
     }
 
-    public function create_hotel_booking($hotel_id,$room_id,$no_of_people,$user_id,$date_from,$date_to,$no_of_rooms)
+    public function create_hotel_booking($hotel_id,$room_id,$no_of_people,$user_id,$date_from,$date_to,$no_of_rooms,$amount_to_be_paid)
     {
         $data=array(
             'hotel_id'=>$hotel_id,
@@ -160,7 +179,8 @@ class User_model extends CI_Model {
             'no_of_people'=>$no_of_people,
             'user_id'=>$user_id,
             'date_from'=>$date_from,
-            'date_to'=>$date_to
+            'date_to'=>$date_to,
+            'amount_to_be_paid'=>$amount_to_be_paid
 
         );
         $this->db->insert('hotel_bookings',$data);

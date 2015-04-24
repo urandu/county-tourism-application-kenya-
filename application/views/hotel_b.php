@@ -28,7 +28,7 @@
 
                                 <div class="form-group"><label class="col-lg-3 control-label">Number of people</label>
 
-                                    <div class="col-lg-4"><select name="no_of_people" class="form-control">
+                                    <div class="col-lg-4"><select name="no_of_people" class="">
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -46,7 +46,7 @@
 
                                 <div class="form-group"><label class="col-lg-3 control-label">Room type</label>
 
-                                    <div class="col-lg-4"><select name="room_id" class="form-control">
+                                    <div class="col-lg-4"><select name="room_id" class="">
                                             <?php $rooms=get_rooms($hotel->hotel_id);
 
                                             if(!empty($rooms))
@@ -71,7 +71,7 @@
 
                                 <div class="form-group"><label class="col-lg-3 control-label">Number of rooms</label>
 
-                                    <div class="col-lg-4"><select name="no_of_rooms" class="form-control">
+                                    <div class="col-lg-4"><select name="no_of_rooms" class="">
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -89,16 +89,16 @@
 
                                 <div class="form-group"><label class="col-lg-3 control-label">From (yyyy-mm-dd)</label>
 
-                                    <input required name="date_from" class=" form-control datepicker"
-                                           type="text" value=""
+                                    <input required name="date_from" class=" "
+                                           type="date" value=""
                                            data-date-format="yyyy-mm-dd">
                                 </div>
 
 
                                 <div class="form-group"><label class="col-lg-3 control-label">To (yyyy-mm-dd)</label>
 
-                                    <input required name="date_to" class=" form-control datepicker"
-                                           type="text" value=""
+                                    <input required name="date_to" class=" "
+                                           type="date" value=""
                                            data-date-format="yyyy-mm-dd">
                                 </div>
 

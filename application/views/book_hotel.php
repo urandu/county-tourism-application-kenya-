@@ -47,54 +47,40 @@
         {
         ?>
 
-        <img
-            src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
+            <img
+                src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
 
-        <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
-
-
-            <p class="text-muted">
-
-            <p id="success_<?php echo($hotel->hotel_id); ?>"  class="hide" > Successfully booked</p>
-            <p id="error_<?php echo($hotel->hotel_id); ?>"  class="hide" > Error in booking</p>
-            <P id="pp1_<?php echo($hotel->hotel_id); ?>" >Number of persons</P>
-            <select id="num_<?php echo($hotel->hotel_id); ?>" name="number_of_people" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
-
-            <p id="pp_<?php echo($hotel->hotel_id); ?>" >select date</p>
-            <input id="date_<?php echo($hotel->hotel_id); ?>" class="input-sm form-control datepicker" size="16"
-                   type="text" value=""
-                   data-date-format="yyyy-mm-dd">
-            </p>
-            <button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" onclick="book_hotel(<?php echo($hotel->hotel_id); ?>)" >Book</button>
-            <button class="btn hide btn-primary" id="btn1_<?php echo($hotel->hotel_id); ?>"  >Booked</button>
-
-            <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
-                    <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
-                        {
-                            echo(substr($hotel->hotel_description,0,100)."...</a>");
-                        }else
-                        {
-                            echo($hotel->hotel_description."</a>");
-                        }
-                        ?></p>
-                </div>
-
-                <?php
-                }
-                ?>
+            <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
 
 
-                <?php
-                }
+                <p class="text-muted">
 
-                ?>
+
+
+
+                    <a href="<?php echo(base_url()); ?>pins/hotel_b/<?php echo($hotel->hotel_id); ?>" ><button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" >Book </button></a>
+
+
+                    <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
+                            <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
+                                {
+                                    echo(substr($hotel->hotel_description,0,100));
+                                }else
+                                {
+                                    echo($hotel->hotel_description);
+                                }
+                                ?></p></div></a>
+            </div>
+
+        <?php
+        }
+            ?>
+
+
+        <?php
+        }
+
+        ?>
 
 
         </div>
@@ -122,40 +108,40 @@
         {
         ?>
 
-        <img
-            src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
+            <img
+                src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
 
-        <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
-
-
-            <p class="text-muted">
+            <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
 
 
+                <p class="text-muted">
 
 
-            <a href="<?php echo(base_url()); ?>pins/hotel_b/<?php echo($hotel->hotel_id); ?>" ><button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" >Book </button></a>
 
 
-            <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
-                    <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
-                        {
-                            echo(substr($hotel->hotel_description,0,100)."...</a>");
-                        }else
-                        {
-                            echo($hotel->hotel_description."</a>");
-                        }
-                        ?></p>
-                </div>
-
-                <?php
-                }
-                ?>
+                    <a href="<?php echo(base_url()); ?>pins/hotel_b/<?php echo($hotel->hotel_id); ?>" ><button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" >Book </button></a>
 
 
-                <?php
-                }
+                    <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
+                            <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
+                                {
+                                    echo(substr($hotel->hotel_description,0,100));
+                                }else
+                                {
+                                    echo($hotel->hotel_description);
+                                }
+                                ?></p></div></a>
+            </div>
 
-                ?>
+        <?php
+        }
+            ?>
+
+
+        <?php
+        }
+
+        ?>
 
 
         </div>
@@ -184,55 +170,40 @@
         {
         ?>
 
-        <img
-            src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
+            <img
+                src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
 
-        <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
-
-
-            <p class="text-muted">
-
-            <p id="success_<?php echo($hotel->hotel_id); ?>"  class="hide" > Successfully booked</p>
-            <p id="error_<?php echo($hotel->hotel_id); ?>"  class="hide" > Error in booking</p>
-            <P id="pp1_<?php echo($hotel->hotel_id); ?>" >Number of persons</P>
-            <select id="num_<?php echo($hotel->hotel_id); ?>" name="number_of_people" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
-
-            <p id="pp_<?php echo($hotel->hotel_id); ?>" >select date</p>
-            <input id="date_<?php echo($hotel->hotel_id); ?>" class="input-sm form-control datepicker" size="16"
-                   type="text" value=""
-                   data-date-format="yyyy-mm-dd">
-            </p>
-            <button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" onclick="book_hotel(<?php echo($hotel->hotel_id); ?>)" >Book</button>
-            <button class="btn hide btn-primary" id="btn1_<?php echo($hotel->hotel_id); ?>"  >Booked</button>
-
-            <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
-                    <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
-                        {
-                            echo(substr($hotel->hotel_description,0,100)."...</a>");
-                        }else
-                        {
-                            echo($hotel->hotel_description."</a>");
-                        }
-                        ?></p>
-                </div>
-
-                <?php
-                }
-                ?>
+            <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
 
 
-                <?php
-                }
+                <p class="text-muted">
 
-                ?>
 
+
+
+                    <a href="<?php echo(base_url()); ?>pins/hotel_b/<?php echo($hotel->hotel_id); ?>" ><button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" >Book </button></a>
+
+
+                    <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
+                            <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
+                                {
+                                    echo(substr($hotel->hotel_description,0,100));
+                                }else
+                                {
+                                    echo($hotel->hotel_description);
+                                }
+                                ?></p></div></a>
+            </div>
+
+        <?php
+        }
+            ?>
+
+
+        <?php
+        }
+
+        ?>
 
 
         </div>
@@ -260,55 +231,40 @@
             {
             ?>
 
-            <img
-                src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
+                <img
+                    src="<?php echo(base_url()); ?>files/<?php echo($hotel->image); ?>">
 
-            <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
-
-
-                <p class="text-muted">
-
-                <p id="success_<?php echo($hotel->hotel_id); ?>"  class="hide" > Successfully booked</p>
-                <p id="error_<?php echo($hotel->hotel_id); ?>"  class="hide" > Error in booking</p>
-                <P id="pp1_<?php echo($hotel->hotel_id); ?>" >Number of persons</P>
-                <select id="num_<?php echo($hotel->hotel_id); ?>" name="number_of_people" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-
-                <p id="pp_<?php echo($hotel->hotel_id); ?>" >select date</p>
-                <input id="date_<?php echo($hotel->hotel_id); ?>" class="input-sm form-control datepicker" size="16"
-                       type="text" value=""
-                       data-date-format="yyyy-mm-dd">
-                </p>
-                <button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" onclick="book_hotel(<?php echo($hotel->hotel_id); ?>)" >Book</button>
-                <button class="btn hide btn-primary" id="btn1_<?php echo($hotel->hotel_id); ?>"  >Booked</button>
-
-                <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
-                        <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
-                            {
-                                echo(substr($hotel->hotel_description,0,100)."...</a>");
-                            }else
-                            {
-                                echo($hotel->hotel_description."</a>");
-                            }
-                            ?></p>
-                    </div>
-
-                    <?php
-                    }
-                    ?>
+                <div class="desc"><h4><?php echo($hotel->hotel_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_hotel_rating($hotel->hotel_id)); ?> ) </h4>
 
 
-                    <?php
-                    }
+                    <p class="text-muted">
 
-                    ?>
 
+
+
+                        <a href="<?php echo(base_url()); ?>pins/hotel_b/<?php echo($hotel->hotel_id); ?>" ><button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" >Book </button></a>
+
+
+                        <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
+                                <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
+                                    {
+                                        echo(substr($hotel->hotel_description,0,100));
+                                    }else
+                                    {
+                                        echo($hotel->hotel_description);
+                                    }
+                                    ?></p></div></a>
+                </div>
+
+            <?php
+            }
+                ?>
+
+
+            <?php
+            }
+
+            ?>
 
             </div>
         </div>
@@ -344,46 +300,32 @@
 
                     <p class="text-muted">
 
-                    <p id="success_<?php echo($hotel->hotel_id); ?>"  class="hide" > Successfully booked</p>
-                    <p id="error_<?php echo($hotel->hotel_id); ?>"  class="hide" > Error in booking</p>
-                    <P id="pp1_<?php echo($hotel->hotel_id); ?>" >Number of persons</P>
-                    <select id="num_<?php echo($hotel->hotel_id); ?>" name="number_of_people" class="form-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-
-                    <p id="pp_<?php echo($hotel->hotel_id); ?>" >select date</p>
-                    <input id="date_<?php echo($hotel->hotel_id); ?>" class="input-sm form-control datepicker" size="16"
-                           type="text" value=""
-                           data-date-format="yyyy-mm-dd">
-                    </p>
-                    <button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" onclick="book_hotel(<?php echo($hotel->hotel_id); ?>)" >Book</button>
-                    <button class="btn hide btn-primary" id="btn1_<?php echo($hotel->hotel_id); ?>"  >Booked</button>
-
-                    <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
-                            <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
-                                {
-                                    echo(substr($hotel->hotel_description,0,100)."...</a>");
-                                }else
-                                {
-                                    echo($hotel->hotel_description."</a>");
-                                }
-                                ?></p>
-                        </div>
-
-                        <?php
-                        }
-                        ?>
 
 
-                        <?php
-                        }
 
-                        ?>
+                        <a href="<?php echo(base_url()); ?>pins/hotel_b/<?php echo($hotel->hotel_id); ?>" ><button class="btn btn-primary" id="btn_<?php echo($hotel->hotel_id); ?>" >Book </button></a>
+
+
+                        <a href="<?php echo(base_url()); ?>pins/view_hotel/<?php echo($hotel->hotel_id); ?>"  class="item-media "><div class="">
+                                <p class="text-muted"><?php if(strlen($hotel->hotel_description)>100)
+                                    {
+                                        echo(substr($hotel->hotel_description,0,100));
+                                    }else
+                                    {
+                                        echo($hotel->hotel_description);
+                                    }
+                                    ?></p></div></a>
+                            </div>
+
+                            <?php
+                            }
+                            ?>
+
+
+                            <?php
+                            }
+
+                            ?>
 
                 </div>
             </div>

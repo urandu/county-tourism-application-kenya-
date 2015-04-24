@@ -46,7 +46,7 @@
 
                                                                 <div class="form-group"><label class="control-label">Rate</label>
 
-                                                                    <div ><select data-required="true" id="rating" name="rating" class="form-control">
+                                                                    <div ><select data-required="true" id="rating" name="rating" class="">
                                                                             <option value="5">5</option>
                                                                             <option value="4">4</option>
                                                                             <option value="3">3</option>
@@ -58,7 +58,7 @@
                                                                 <div class="form-group"><label class=" control-label">comment</label>
 
                                                                     <div ><input type="text" name="comment" placeholder="comment (not required)"
-                                                                                 class="form-control"></div>
+                                                                                 class=""></div>
                                                                 </div>
                                                                 <input type="submit" class="btn-small btn  " value="submit">
 

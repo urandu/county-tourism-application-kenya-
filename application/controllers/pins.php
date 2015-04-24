@@ -255,6 +255,12 @@ class Pins extends Im_Controller
     }
 
 
+    public function payment()
+    {
+        $data['page_title']='Make Payment';
+        $this->load->view('payment',$data);
+    }
+
     public function book_hotel()
     {
 
@@ -376,13 +382,24 @@ class Pins extends Im_Controller
         $no_of_people=$this->input->post('no_of_people');
         $no_of_rooms=$this->input->post('no_of_rooms');
         //$amount_paid=$this->input->post('amount_paid');
+        $amount_to_be_paid=$no_of_rooms*get_room_cost($room_id);
         $date_to=$this->input->post('date_to');
         $date_from=$this->input->post('date_from');
         $this->load->model('user_model');
-        $this->user_model->create_hotel_booking($hotel_id,$room_id,$no_of_people,$user_id,$date_from,$date_to,$no_of_rooms);
+        $this->user_model->create_hotel_booking($hotel_id,$room_id,$no_of_people,$user_id,$date_from,$date_to,$no_of_rooms,$amount_to_be_paid);
 
         $data['page_title']='Kilifi County';
-        $this->load->view('home');
+        $this->load->view('home',$data);
+    }
+
+
+    public function done_payment()
+    {
+        $this->load->model('user_model');
+        $this->user_model->make_payment($this->session->userdata('user_id'));
+
+        $data['page_title']='Make Payment';
+        $this->load->view('payment',$data);
     }
 
     public function add_destination_booking()
@@ -392,9 +409,10 @@ class Pins extends Im_Controller
         $number_of_people=$this->input->post('number_of_people');
         //$amount_to_be_paid=$this->input->post('amount_to_be_paid');
         $user_id=$this->session->userdata('user_id');
+        $amount_to_be_paid=$number_of_people*get_destination_cost($destination_id);
         //$amount_paid=$this->input->post('amount_paid');
         $this->load->model('user_model');
-        $this->user_model->create_destination_booking($destination_id,$user_id,$date_of_trip,$number_of_people);
+        $this->user_model->create_destination_booking($destination_id,$user_id,$date_of_trip,$number_of_people,$amount_to_be_paid);
         echo(1);
         session_write_close ();
 

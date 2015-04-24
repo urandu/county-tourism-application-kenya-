@@ -54,7 +54,7 @@
                                             echo($hotel->hotel_description);
                                         }
                                         ?></p>
-                                </div></a>
+                                </div></div></a>
 
                     <?php
                     }
@@ -103,7 +103,7 @@
                                             echo($hotel->hotel_description);
                                         }
                                         ?></p>
-                                </div></a>
+                                </div></div></a>
 
                     <?php
                     }
@@ -154,7 +154,7 @@
                                             echo($hotel->hotel_description);
                                         }
                                         ?></p>
-                                </div></a>
+                                </div></div></a>
 
                     <?php
                     }
@@ -205,7 +205,7 @@
                                             echo($hotel->hotel_description);
                                         }
                                         ?></p>
-                                </div></a>
+                                </div></div></a>
 
                     <?php
                     }
@@ -255,7 +255,7 @@
                                             echo($hotel->hotel_description);
                                         }
                                         ?></p>
-                                </div></a>
+                                </div></div></a>
 
                     <?php
                     }

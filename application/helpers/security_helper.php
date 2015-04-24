@@ -103,3 +103,81 @@ function get_destination_name($destination_id)
     $query = $CI->db->get('destinations');
     return $query->result()[0]->destination_name;
 }
+
+function get_amount_owed()
+{
+    $CI=get_instance();
+
+
+    $user_id=$CI->session->userdata('user_id');
+
+    $CI->db->select_sum('amount_to_be_paid');
+    $CI->db->where('user_id',$user_id);
+    $CI->db->where('amount_paid',null);
+    $query = $CI->db->get('destination_bookings');
+
+    $a= $query->result()[0]->amount_to_be_paid;
+
+
+    $CI->db->select_sum('amount_to_be_paid');
+    $CI->db->where('user_id',$user_id);
+    $CI->db->where('amount_paid',null);
+    $query = $CI->db->get('hotel_bookings');
+    $b=$query->result()[0]->amount_to_be_paid;
+
+
+    return $a+$b;
+
+}
+
+
+
+
+function get_amount_paid()
+{
+    $CI=get_instance();
+
+
+    $user_id=$CI->session->userdata('user_id');
+
+   // $CI->db->select_sum('amount_to_be_paid');
+    $CI->db->where('user_id',$user_id);
+    $CI->db->where('amount_paid > 0');
+    $query = $CI->db->get('destination_bookings');
+
+    $a= $query->result();
+
+
+    //$CI->db->select_sum('amount_to_be_paid');
+    $CI->db->where('user_id',$user_id);
+    $CI->db->where('amount_paid > 0');
+    $query = $CI->db->get('hotel_bookings');
+    $b=$query->result();
+
+
+    return $a+$b;
+
+}
+
+
+
+
+function get_room_cost($room_id)
+{
+    $CI=get_instance();
+
+
+    $CI->db->where('room_id',$room_id);
+    $query = $CI->db->get('rooms');
+    return $query->result()[0]->price;
+}
+
+function get_destination_cost($destination_id)
+{
+    $CI=get_instance();
+
+
+    $CI->db->where('destination_id',$destination_id);
+    $query = $CI->db->get('destinations');
+    return $query->result()[0]->price;
+}

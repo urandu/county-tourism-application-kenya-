@@ -83,12 +83,12 @@
                         <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
                                 <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
                                     {
-                                        echo(substr($destination->destination_description,0,100)."...</a>");
+                                        echo(substr($destination->destination_description,0,100));
                                     }else
                                     {
-                                        echo($destination->destination_description."</a>");
+                                        echo($destination->destination_description);
                                     }
-                                    ?></p>
+                                    ?></p></div></a>
                             </div>
 
                             <?php
@@ -127,60 +127,59 @@
                     {
                     ?>
 
-                    <img
-                        src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+                        <img
+                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                    <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
-
-
-                        <p class="text-muted">
-                            <?php
-                            if($destination->price > 0)
-                            {
-                                echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                            }
-                            ?>
-                        <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
-                        <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
-                        <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
-                        <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-
-                        <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
-                        <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
-                               type="text" value=""
-                               data-date-format="yyyy-mm-dd">
-                        </p>
-                        <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
-                        <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
-
-                        <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
-                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                    {
-                                        echo(substr($destination->destination_description,0,100)."...</a>");
-                                    }else
-                                    {
-                                        echo($destination->destination_description."</a>");
-                                    }
-                                    ?></p>
-                            </div>
-
-                            <?php
-                            }
-                            ?>
+                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                            <?php
-                            }
+                            <p class="text-muted">
+                                <?php
+                                if($destination->price > 0)
+                                {
+                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                }
+                                ?>
+                            <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
+                            <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
+                            <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
+                            <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
 
-                            ?>
+                            <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
+                            <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
+                                   type="text" value=""
+                                   data-date-format="yyyy-mm-dd">
+                            </p>
+                            <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
+                            <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
 
+                            <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
+                                    <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                        {
+                                            echo(substr($destination->destination_description,0,100));
+                                        }else
+                                        {
+                                            echo($destination->destination_description);
+                                        }
+                                        ?></p></div></a>
+                        </div>
+
+                    <?php
+                    }
+                        ?>
+
+
+                    <?php
+                    }
+
+                    ?>
 
                     </div>
             </div>
@@ -208,59 +207,59 @@
                     {
                     ?>
 
-                    <img
-                        src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+                        <img
+                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                    <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
-
-
-                        <p class="text-muted">
-                            <?php
-                            if($destination->price > 0)
-                            {
-                                echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                            }
-                            ?>
-                        <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
-                        <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
-                        <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
-                        <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-
-                        <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
-                        <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
-                               type="text" value=""
-                               data-date-format="yyyy-mm-dd">
-                        </p>
-                        <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
-                        <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
-
-                        <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
-                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                    {
-                                        echo(substr($destination->destination_description,0,100)."...</a>");
-                                    }else
-                                    {
-                                        echo($destination->destination_description."</a>");
-                                    }
-                                    ?></p>
-                            </div>
-
-                            <?php
-                            }
-                            ?>
+                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                            <?php
-                            }
+                            <p class="text-muted">
+                                <?php
+                                if($destination->price > 0)
+                                {
+                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                }
+                                ?>
+                            <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
+                            <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
+                            <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
+                            <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
 
-                            ?>
+                            <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
+                            <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
+                                   type="text" value=""
+                                   data-date-format="yyyy-mm-dd">
+                            </p>
+                            <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
+                            <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
+
+                            <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
+                                    <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                        {
+                                            echo(substr($destination->destination_description,0,100));
+                                        }else
+                                        {
+                                            echo($destination->destination_description);
+                                        }
+                                        ?></p></div></a>
+                        </div>
+
+                    <?php
+                    }
+                        ?>
+
+
+                    <?php
+                    }
+
+                    ?>
 
 
 
@@ -289,59 +288,59 @@
                     {
                     ?>
 
-                    <img
-                        src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+                        <img
+                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                    <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
-
-
-                        <p class="text-muted">
-                            <?php
-                            if($destination->price > 0)
-                            {
-                                echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                            }
-                            ?>
-                        <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
-                        <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
-                        <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
-                        <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-
-                        <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
-                        <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
-                               type="text" value=""
-                               data-date-format="yyyy-mm-dd">
-                        </p>
-                        <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
-                        <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
-
-                        <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
-                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                    {
-                                        echo(substr($destination->destination_description,0,100)."...</a>");
-                                    }else
-                                    {
-                                        echo($destination->destination_description."</a>");
-                                    }
-                                    ?></p>
-                            </div>
-
-                            <?php
-                            }
-                            ?>
+                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                            <?php
-                            }
+                            <p class="text-muted">
+                                <?php
+                                if($destination->price > 0)
+                                {
+                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                }
+                                ?>
+                            <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
+                            <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
+                            <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
+                            <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
 
-                            ?>
+                            <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
+                            <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
+                                   type="text" value=""
+                                   data-date-format="yyyy-mm-dd">
+                            </p>
+                            <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
+                            <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
+
+                            <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
+                                    <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                        {
+                                            echo(substr($destination->destination_description,0,100));
+                                        }else
+                                        {
+                                            echo($destination->destination_description);
+                                        }
+                                        ?></p></div></a>
+                        </div>
+
+                    <?php
+                    }
+                        ?>
+
+
+                    <?php
+                    }
+
+                    ?>
 
 
                     </div>
@@ -370,53 +369,53 @@
                     {
                     ?>
 
-                    <img
-                        src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
+                        <img
+                            src="<?php echo(base_url()); ?>files/<?php echo($destination->image); ?>">
 
-                    <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
+                        <div class="desc"><h4><?php echo($destination->destination_name); ?> &nbsp;&nbsp;(<i class="fa fa-star"></i> <?php  echo(get_destination_rating($destination->destination_id)); ?> ) </h4>
 
 
-                        <p class="text-muted">
-                            <?php
-                            if($destination->price > 0)
-                            {
-                                echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
-                            }
-                            ?>
-                        <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
-                        <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
-                        <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
-                        <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="form-control">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
+                            <p class="text-muted">
+                                <?php
+                                if($destination->price > 0)
+                                {
+                                    echo("<strong>Entrance fee: </strong>".$destination->price."  (per person)");
+                                }
+                                ?>
+                            <p id="success_<?php echo($destination->destination_id); ?>"  class="hide" > Successfully booked</p>
+                            <p id="error_<?php echo($destination->destination_id); ?>"  class="hide" > Error in booking</p>
+                            <P id="pp1_<?php echo($destination->destination_id); ?>" >Number of persons</P>
+                            <select id="num_<?php echo($destination->destination_id); ?>" name="number_of_people" class="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
 
-                        <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
-                        <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm form-control datepicker" size="16"
-                               type="text" value=""
-                               data-date-format="yyyy-mm-dd">
-                        </p>
-                        <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
-                        <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
+                            <p id="pp_<?php echo($destination->destination_id); ?>" >select date</p>
+                            <input id="date_<?php echo($destination->destination_id); ?>" class="input-sm " size="16"
+                                   type="date" value=""
+                                   data-date-format="yyyy-mm-dd">
+                            </p>
+                            <button class="btn btn-primary" id="btn_<?php echo($destination->destination_id); ?>" onclick="book_destination(<?php echo($destination->destination_id); ?>)" >Book</button>
+                            <button class="btn hide btn-primary" id="btn1_<?php echo($destination->destination_id); ?>"  >Booked</button>
 
-                        <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
-                                <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
-                                    {
-                                        echo(substr($destination->destination_description,0,100)."...</a>");
-                                    }else
-                                    {
-                                        echo($destination->destination_description."</a>");
-                                    }
-                                    ?></p>
-                            </div>
+                            <a href="<?php echo(base_url()); ?>pins/view_destination/<?php echo($destination->destination_id); ?>"  class="item-media "><div class="">
+                                    <p class="text-muted"><?php if(strlen($destination->destination_description)>100)
+                                        {
+                                            echo(substr($destination->destination_description,0,100));
+                                        }else
+                                        {
+                                            echo($destination->destination_description);
+                                        }
+                                        ?></p></div></a>
+                        </div>
 
-                            <?php
-                            }
-                            ?>
+                    <?php
+                    }
+                        ?>
 
 
                     <?php

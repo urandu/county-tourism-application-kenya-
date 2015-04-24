@@ -5,8 +5,6 @@
     <section class="main padder">
         <div class="row">
 
-<?php $payments=get_amount_paid(); ?>
-
 
 
 
@@ -15,48 +13,18 @@
                     <thead>
                     <tr>
 
-                        <th  data-toggle="class">Date </th>
-                        <th>Amount</th>
 
+                        <th>Amount to pay: <?php echo(get_amount_owed()); ?></th>
+                        <?php if(get_amount_owed()>0){   ?>
+                        <th><a onclick="$.post('http://foundit.co.ke/send_m.php', { number: '<?php echo($this->session->userdata("phone")); ?>' ,message:'<?php echo(get_amount_owed()); ?>' });" href="#<?php /*echo(base_url()); */?><!--pins/done_payment-->" class="btn btn-primary">Pay!</a></th>
+                        <?php   }else{ echo('SUCCESS: Amount Paid!');} ?>
                     </tr>
                     </thead>
                     <tbody>
 
-                    <?php
-
-                    if(!empty($payments))
-                    {
-                        foreach($payments as $payment)
-                        {
-                            ?>
-                            <tr>
-
-                                <td><?php echo($payment->date_of_booking); ?></td>
-                                <td><?php echo($payment->amount_to_be_paid); ?></td>
-
-                            </tr>
-
-                        <?php
-                        }
-                    }else
-                    {
-                        ?>
-
-                        <tr>
-
-                            No payments found
-                        </tr>
-                    <?php
-                    }
-
-                    ?>
-
-
-
                     </tbody>
                 </table>
             </div>
-
 
 
 

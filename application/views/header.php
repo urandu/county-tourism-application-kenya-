@@ -54,7 +54,7 @@
     <ul class="nav" data-spy="affix" data-offset-top="50">
         <li class="active"><a href="<?php echo(base_url()); ?>pins"><i class="fa fa-home fa-lg"></i><span>Home</span></a></li>
 
-
+        <li><a href="<?php echo(base_url()); ?>pins/payment"><i class="fa fa-money fa-lg"></i><span>Make payment</span></a></li>
 
         <li><a href="<?php echo(base_url()); ?>pins/destinations"><i class="fa fa-globe fa-lg"></i><span>Destinations</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/hotels"><i class="fa fa-credit-card fa-lg"></i><span>Hotels</span></a></li>
@@ -64,7 +64,7 @@
         <li><a href="<?php echo(base_url()); ?>pins/bookings"><i class="fa fa-suitcase fa-lg"></i><span>Hotel Bookings</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/map"><i class="fa fa-map-marker fa-lg"></i><span>Map</span></a></li>
         <li><a href="<?php echo(base_url()); ?>pins/payments"><i class="fa fa-money fa-lg"></i><span>My Payments</span></a></li>
-        <li><a href="<?php echo(base_url()); ?>pins/settings"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>
+        <!--<li><a href="<?php /*echo(base_url()); */?>pins/settings"><i class="fa fa-gear fa-lg"></i><span>settings</span></a></li>-->
 
 
     </ul>
